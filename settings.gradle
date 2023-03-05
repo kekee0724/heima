@@ -1,5 +1,5 @@
 rootProject.name = 'reco-web'
-include 'boot'
+include 'reco-boot'
 include 'r2035-rewrite-domain'
 include 'r2035-rewrite-web'
 include 'r2035-rewrite-model'
