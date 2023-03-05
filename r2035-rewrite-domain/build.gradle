@@ -1,0 +1,3 @@
+dependencies {
+    compile project(':r2035-rewrite-model')
+}

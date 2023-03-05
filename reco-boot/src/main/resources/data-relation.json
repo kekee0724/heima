@@ -1,0 +1,86 @@
+﻿[
+  {
+    "dataType": "数值",
+    "compareRelation": [
+      {
+        "value": "等于",
+        "exp": "="
+      },
+      {
+        "value": "不等于",
+        "exp": "!="
+      },
+      {
+        "value": "大于",
+        "exp": ">"
+      },
+      {
+        "value": "大于等于",
+        "exp": ">="
+      },
+      {
+        "value": "小于",
+        "exp": "<"
+      },
+      {
+        "value": "小于等于",
+        "exp": "<="
+      }
+    ]
+  },
+  {
+    "dataType": "字符串",
+    "compareRelation": [
+      {
+        "value": "等于",
+        "exp": "="
+      },
+      {
+        "value": "不等于",
+        "exp": "!="
+      },
+      {
+        "value": "包含",
+        "exp": "like"
+      }
+    ]
+  },
+  {
+    "dataType": "时间",
+    "compareRelation": [
+      {
+        "value": "等于",
+        "exp": "="
+      },
+      {
+        "value": "不等于",
+        "exp": "!="
+      },
+      {
+        "value": "大于",
+        "exp": ">"
+      },
+      {
+        "value": "大于等于",
+        "exp": ">="
+      },
+      {
+        "value": "小于",
+        "exp": "<"
+      },
+      {
+        "value": "小于等于",
+        "exp": "<="
+      }
+    ]
+  },
+  {
+    "dataType": "布尔",
+    "compareRelation": [
+      {
+        "value": "等于",
+        "exp": "="
+      }
+    ]
+  }
+]
