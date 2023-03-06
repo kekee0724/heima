@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>cn.bipark.reco</groupId>
+    <artifactId>reco-office-ide</artifactId>
+    <version>${reco.version}</version>
+
+    <properties>
+        <reco.version>1.5.9</reco.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-office</artifactId>
+            <version>${reco.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-office-driver</artifactId>
+            <version>${reco.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-office-driver-poi</artifactId>
+            <version>${reco.version}</version>
+        </dependency>
+    </dependencies>
+
+</project>

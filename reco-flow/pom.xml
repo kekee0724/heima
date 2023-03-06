@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>cn.bipark.reco</groupId>
+    <artifactId>reco-flow</artifactId>
+    <version>${reco.version}</version>
+
+    <properties>
+        <reco.version>10.1.17</reco.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-flow-domain</artifactId>
+            <version>${reco.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-flow-model</artifactId>
+            <version>${reco.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-flow-web</artifactId>
+            <version>${reco.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-stateflow-domain</artifactId>
+            <version>${reco.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-stateflow-model</artifactId>
+            <version>${reco.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-stateflow-web</artifactId>
+            <version>${reco.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-workflow-domain</artifactId>
+            <version>${reco.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-workflow-model</artifactId>
+            <version>${reco.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-workflow-web</artifactId>
+            <version>${reco.version}</version>
+        </dependency>
+    </dependencies>
+</project>

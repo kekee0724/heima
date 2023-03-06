@@ -15,6 +15,20 @@
     </parent>
 
     <modules>
+        <module>reco-ide</module>
+        <module>reco-flow</module>
+        <module>reco-office-ide</module>
+        <module>reco-third</module>
+        <module>reco-pay</module>
+        <module>reco-middleware</module>
+        <module>reco-dataservice-ide</module>
+        <module>reco-iparkplus-ide</module>
+        <module>reco-oa-ide</module>
+        <module>reco-z6-ide</module>
+        <module>reco-g6-ide</module>
+        <module>reco-policy-ide</module>
+        <module>reco-ieb-ide</module>
+        <module>reco-biparkall</module>
         <module>r2035-rewrite-model</module>
         <module>r2035-rewrite-domain</module>
         <module>r2035-rewrite-web</module>
@@ -29,11 +43,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.axonframework</groupId>
@@ -78,6 +87,11 @@
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-core</artifactId>
             <version>10.1.22</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>
