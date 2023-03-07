@@ -9,7 +9,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
-@ApiModel(value = "未知对象-表单VM")
+@ApiModel(value = "测试对象-表单VM")
 @Data
 public class OrderFormVM {
 

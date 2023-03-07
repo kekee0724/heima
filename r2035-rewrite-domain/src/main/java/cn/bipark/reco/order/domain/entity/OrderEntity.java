@@ -8,21 +8,21 @@ import org.springframework.stereotype.Component;
 @Component
 public class OrderEntity extends BaseAggregate<BiOrder> {
     /**
-     * 通知未知对象被创建
+     * 通知测试对象被创建
      */
     public void notifyCreated() {
         publish(new OrderCreatedEvent(getData()));
     }
 
     /**
-     * 通知未知对象被更新
+     * 通知测试对象被更新
      */
     public void notifyUpdated() {
         publish(new OrderUpdatedEvent(getData()));
     }
 
     /**
-     * 通知未知对象被删除
+     * 通知测试对象被删除
      */
     public void notifyDeleted() {
         publish(new OrderDeletedEvent(getData()));

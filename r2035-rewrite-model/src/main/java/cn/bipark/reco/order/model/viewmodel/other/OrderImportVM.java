@@ -6,7 +6,7 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * 未知对象-导入VM
+ * 测试对象-导入VM
  */
 @Data
 public class OrderImportVM {

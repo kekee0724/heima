@@ -3,7 +3,7 @@ package cn.bipark.reco.order.model.exception;
 import cn.bipark.reco.core.model.exception.AppException;
 
 /**
-* 未知对象 异常
+* 测试对象 异常
 */
 public class OrderException extends AppException {
     public OrderException() {

@@ -26,9 +26,9 @@ public class OrderAppService extends BaseAppService {
     private final BiOrderColumn.BiOrder tc = BiOrderColumn.biOrder;
 
     /**
-     *根据ID获取未知对象详情
+     *根据ID获取测试对象详情
      * @param id
-     * @return  未知对象详情VM
+     * @return  测试对象详情VM
      */
     public OrderDetailVM get(Long id) {
         var entity = resolve(OrderRepository.class).get(id);
@@ -38,18 +38,18 @@ public class OrderAppService extends BaseAppService {
     }
 
     /**
-     * 分页查询未知对象
+     * 分页查询测试对象
      * @param query 查询条件
-     * @return  未知对象列表VM
+     * @return  测试对象列表VM
      */
     public PagedList<OrderListVM> getPaged(OrderQuery query) {
         return PageUtils.map(resolve(OrderRepository.class).getPaged(getQueryDsl(query), query), OrderListVM.class);
     }
 
     /**
-     * 获取全部未知对象-不分页
+     * 获取全部测试对象-不分页
      * @param query 查询条件
-     * @return  未知对象列表VM
+     * @return  测试对象列表VM
      */
     public List<OrderListVM> getAll(OrderQuery query) {
         return PageUtils.map(resolve(OrderRepository.class).getAll(getQueryDsl(query)), OrderListVM.class);
@@ -69,7 +69,7 @@ public class OrderAppService extends BaseAppService {
     }
 
     /**
-     * 获取符合查询条件的未知对象数量
+     * 获取符合查询条件的测试对象数量
      * @param query 查询条件
      * @return  数量
      */
@@ -78,8 +78,8 @@ public class OrderAppService extends BaseAppService {
     }
 
     /**
-     * 新增未知对象
-     * @param vm    未知对象表单VM
+     * 新增测试对象
+     * @param vm    测试对象表单VM
      * @return  新对象ID
      */
     @Transactional
@@ -90,8 +90,8 @@ public class OrderAppService extends BaseAppService {
     }
 
     /**
-     * 根据ID更新未知对象
-     * @param vm    未知对象表单VM
+     * 根据ID更新测试对象
+     * @param vm    测试对象表单VM
      * @param id    对象ID
      * @return  是否成功
      */
@@ -102,7 +102,7 @@ public class OrderAppService extends BaseAppService {
     }
 
     /**
-     * 根据ID删除未知对象
+     * 根据ID删除测试对象
      * @param id    对象ID
      * @return  是否成功
      */
@@ -118,7 +118,7 @@ public class OrderAppService extends BaseAppService {
     }
 
     /**
-     * 批量删除未知对象
+     * 批量删除测试对象
      * @param ids   对象ID数组
      * @return  成功数量
      */
