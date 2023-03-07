@@ -11,9 +11,9 @@
         <module>reco-ide</module>
         <module>reco-flow</module>
         <module>reco-office-ide</module>
-        <module>reco-third</module>
+        <module>reco-oauth2</module>
         <module>reco-pay</module>
-        <module>reco-middleware</module>
+        <module>reco-push</module>
         <module>reco-dataservice-ide</module>
         <module>reco-iparkplus-ide</module>
         <module>reco-oa-ide</module>

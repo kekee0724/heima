@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>cn.bipark.reco</groupId>
-    <artifactId>reco-middleware</artifactId>
+    <artifactId>reco-push</artifactId>
     <version>${reco.version}</version>
 
     <properties>
