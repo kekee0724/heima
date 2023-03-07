@@ -41,6 +41,11 @@
             <artifactId>reco-ide</artifactId>
             <version>10.1.22</version>
         </dependency>
+        <dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-oauth2</artifactId>
+            <version>10.1.4</version>
+        </dependency>
     </dependencies>
 
     <build>

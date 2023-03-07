@@ -13,6 +13,16 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>taobao-sdk-java-auto</artifactId>
+            <version>20211020</version>
+        </dependency>
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-core</artifactId>
+            <version>4.5.1</version>
+        </dependency>
+        <dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-dgwork-domain</artifactId>
             <version>${reco.version}</version>
