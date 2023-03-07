@@ -114,8 +114,8 @@
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-utils-1.0-SNAPSHOT.jar</artifactId>
-            <version>${reco.version}</version>
+            <artifactId>reco-utils</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 </project>
