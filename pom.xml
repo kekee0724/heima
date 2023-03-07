@@ -7,6 +7,13 @@
     <version>10.0.1</version>
     <packaging>pom</packaging>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.1</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
     <modules>
         <module>reco-ide</module>
         <module>reco-flow</module>
@@ -27,7 +34,7 @@
         <module>r2035-rewrite-web</module>
         <module>reco-boot</module>
     </modules>
-    
+
     <dependencies>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
@@ -42,8 +49,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>11</source>
-                    <target>11</target>
+                    <source>13</source>
+                    <target>13</target>
                 </configuration>
             </plugin>
         </plugins>
