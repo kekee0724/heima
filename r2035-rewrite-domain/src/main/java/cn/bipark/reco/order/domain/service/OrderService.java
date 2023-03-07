@@ -8,7 +8,6 @@ import cn.bipark.reco.order.model.entity.BiOrder;
 import cn.bipark.reco.order.model.viewmodel.list.OrderListVM;
 import cn.bipark.reco.order.model.viewmodel.form.OrderFormVM;
 import cn.bipark.reco.order.model.viewmodel.detail.OrderDetailVM;
-import lombok.var;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -3,7 +3,6 @@ package cn.bipark.reco.order.domain.entity;
 import cn.bipark.reco.core.domain.entity.BaseAggregate;
 import cn.bipark.reco.order.model.entity.BiOrder;
 import cn.bipark.reco.order.model.message.*;
-import lombok.var;
 import org.springframework.stereotype.Component;
 
 @Component
