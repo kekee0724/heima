@@ -8,10 +8,6 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Import;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistration;
-import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
-import cn.bipark.reco.office.driver.Loader;
-//import cn.bipark.reco.order.web.handler;
 
 @EnableScheduling
 @EnableCaching
