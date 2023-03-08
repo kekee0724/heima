@@ -1,3 +1,22 @@
+DROP TABLE IF EXISTS `vw_sys_account_sort`;
+CREATE TABLE `vw_sys_account_sort`
+(
+    `id`                     BIGINT COMMENT 'id',
+    `is_head_office`         BIT(1),
+    `unit_sequence`          TINYINT,
+    `unit_id`                BIGINT,
+    `is_unit`                BIT(1),
+    `dept_sequence`          TINYINT,
+    `dept_id`                BIGINT,
+    `position_user_sequence` TINYINT,
+    `position_user_id`       BIGINT,
+    PRIMARY KEY (`id`) USING BTREE,
+    INDEX `id` (`id`) USING BTREE
+)
+    ENGINE = INNODB
+    DEFAULT CHARSET = utf8mb4
+    COLLATE = utf8mb4_0900_ai_ci;
+
 -- ----------------------------
 -- Records of sys_account
 -- ----------------------------
