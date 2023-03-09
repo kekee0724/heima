@@ -18,6 +18,16 @@
         <reco.version>10.1.22</reco.version>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-core</artifactId>
+                <version>3.0.1</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
         <dependency>
             <groupId>cn.afterturn</groupId>
@@ -70,7 +80,7 @@
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-boot-starter</artifactId>
-            <version>3.0.1</version>
+            <version>3.0.0</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
