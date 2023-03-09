@@ -4,129 +4,98 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>cn.bipark.reco</groupId>
-    <artifactId>reco-z6-ide</artifactId>
+    <artifactId>reco-z6-base</artifactId>
     <version>${reco.version}</version>
 
     <properties>
-        <reco.version>10.5.93</reco.version>
-        <z6.version>10.6.766</z6.version>
+        <reco.version>10.6.766</reco.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-agent-domain</artifactId>
+            <artifactId>reco-contactpersonal-domain</artifactId>
             <version>${reco.version}</version>
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-agent-model</artifactId>
+            <artifactId>reco-contactpersonal-model</artifactId>
             <version>${reco.version}</version>
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-agent-web</artifactId>
+            <artifactId>reco-contactpersonal-web</artifactId>
             <version>${reco.version}</version>
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-contract-domain</artifactId>
+            <artifactId>reco-customer-domain</artifactId>
             <version>${reco.version}</version>
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-contract-model</artifactId>
+            <artifactId>reco-customer-model</artifactId>
             <version>${reco.version}</version>
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-contract-web</artifactId>
+            <artifactId>reco-customer-web</artifactId>
             <version>${reco.version}</version>
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-cost-domain</artifactId>
+            <artifactId>reco-exception-domain</artifactId>
             <version>${reco.version}</version>
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-cost-model</artifactId>
+            <artifactId>reco-exception-model</artifactId>
             <version>${reco.version}</version>
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-cost-web</artifactId>
+            <artifactId>reco-member-domain</artifactId>
             <version>${reco.version}</version>
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-merchant-domain</artifactId>
+            <artifactId>reco-member-model</artifactId>
             <version>${reco.version}</version>
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-merchant-model</artifactId>
+            <artifactId>reco-member-web</artifactId>
             <version>${reco.version}</version>
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-merchant-web</artifactId>
+            <artifactId>reco-roleuser-domain</artifactId>
             <version>${reco.version}</version>
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-meter-domain</artifactId>
+            <artifactId>reco-roleuser-model</artifactId>
             <version>${reco.version}</version>
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-meter-model</artifactId>
+            <artifactId>reco-roleuser-web</artifactId>
             <version>${reco.version}</version>
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-meter-web</artifactId>
+            <artifactId>reco-space-domain</artifactId>
             <version>${reco.version}</version>
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-tax-domain</artifactId>
+            <artifactId>reco-space-model</artifactId>
             <version>${reco.version}</version>
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-tax-model</artifactId>
+            <artifactId>reco-space-web</artifactId>
             <version>${reco.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-tax-web</artifactId>
-            <version>${reco.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-visit-domain</artifactId>
-            <version>${reco.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-visit-model</artifactId>
-            <version>${reco.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-visit-web</artifactId>
-            <version>${reco.version}</version>
-        </dependency>
-        <!--<dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-z6-ide</artifactId>
-            <version>${reco.version}</version>
-        </dependency>-->
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-z6-base</artifactId>
-            <version>${z6.version}</version>
         </dependency>
     </dependencies>
 
