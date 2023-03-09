@@ -68,7 +68,7 @@
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-z6-base</artifactId>
+            <artifactId>reco-space</artifactId>
             <version>10.6.766</version>
         </dependency>
         <dependency>
