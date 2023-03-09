@@ -10,6 +10,16 @@
         <version>10.0.1</version>
     </parent>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.22</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
         <!--
         OAuth2 OAuth2 Controller QQ QQ Controller
