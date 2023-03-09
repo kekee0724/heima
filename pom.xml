@@ -36,6 +36,17 @@
     </modules>
 
     <dependencies>
+        <!--
+        个人设置 Profile Controller 元数据网关管理 Metadata Api Controller
+        单位数据目录 Unit Catalog Controller 单位管理 Unit Controller
+        园区数据目录 Park Catalog Controller 园区管理 Park Controller
+        图片管理 Picture Controller 岗位管理 Position Controller
+        标签项管理 Tag Controller 消息场景 Scene Controller
+        消息管理 Notification Controller 用户管理 Account Controller
+        角色管理 Role Controller 部门管理 Dept Controller 附件管理 Index Controller
+        reco-attach-model 10.1.22 reco-authorization-model 10.1.22
+        reco-metadata-model 10.1.22 reco-notification-model 10.1.22
+        reco-organization-model 10.1.22 reco-tag-model 10.1.22-->
         <dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-ide</artifactId>
@@ -43,8 +54,8 @@
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-oauth2</artifactId>
-            <version>10.1.4</version>
+            <artifactId>reco-office-ide</artifactId>
+            <version>1.5.9</version>
         </dependency>
     </dependencies>
 

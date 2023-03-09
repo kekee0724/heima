@@ -11,6 +11,24 @@
     </parent>
 
     <dependencies>
+        <!--
+        OAuth2 OAuth2 Controller QQ QQ Controller
+        二维码QR Code Controller 企业微信 Wechat EP Controller
+        企业微信 CallbackCallback Controller 企业微信 JsApiJs Api Controller
+        公众号Wechat MP Controller 公众号 JsApiJs Api Controller
+        微信Wechat Controller 微博 Weibo Controller
+        政务钉钉Dg Work Controller 政务钉钉 jsApiJs Api Controller
+        政务钉钉待办 Todo Controller 钉钉 Ding Talk Controller
+        钉钉 jsApiJs Api Controller 钉钉待办 Todo Controller
+        钉钉扫码 Ding Talk Scan Controller
+        reco-dgwork-model 10.1.4 reco-dingtalk-model 10.1.4
+        reco-oauth2-model 10.1.4  reco-qq-model 10.1.4-->
+        <dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-oauth2</artifactId>
+            <version>10.1.4</version>
+        </dependency>
+        <!--测试对象管理 Order Controller-->
         <dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>r2035-rewrite-web</artifactId>
