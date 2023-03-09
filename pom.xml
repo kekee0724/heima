@@ -52,11 +52,6 @@
             <artifactId>reco-ide</artifactId>
             <version>10.1.22</version>
         </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-office-ide</artifactId>
-            <version>1.5.9</version>
-        </dependency>
     </dependencies>
 
     <build>
