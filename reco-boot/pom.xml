@@ -38,12 +38,12 @@
         钉钉扫码 Ding Talk Scan Controller
         reco-dgwork-model 10.1.4 reco-dingtalk-model 10.1.4
         reco-oauth2-model 10.1.4  reco-qq-model 10.1.4-->
-        <!--可独立运行 oauth2-->
-        <!--<dependency>
+        <!--可独立运行 oauth2 (JVM running for 8.412) 包含reco-ide -->
+        <dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-oauth2</artifactId>
             <version>10.1.4</version>
-        </dependency>-->
+        </dependency>
         <!--abm分发  App Abm Distribute Controller  app配置管理  App Config Controller
         banner图设置  App Banner Controller  jpush-controller  Jpush Controller
         专家评审结果管理  Special Projec Batch Result Controller  专项信息管理  Special Controller
@@ -91,78 +91,79 @@
         话题管理  Topic Controller 资源管理  Resource Controller
         资源订单  Resource Order Controller 问卷管理  Questionnaire Controller
         问题库管理  Problem Controller-->
-        <!--可独立运行 pay-->
-        <!--<dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-pay</artifactId>
-            <version>10.1.0</version>
-        </dependency>-->
-        <!--可独立运行 dataservice-->
-        <!--<dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-dataservice-ide</artifactId>
-            <version>10.1.22</version>
-        </dependency>-->
-        <!--可独立运行 push-->
+        <!--可独立运行 push (JVM running for 7.018) 包含reco-ide -->
         <!--<dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-push</artifactId>
             <version>10.5.53</version>
         </dependency>-->
-        <!--可独立运行 flow-->
+        <!--可独立运行 pay (JVM running for 7.442) 包含reco-ide -->
+        <!--<dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-pay</artifactId>
+            <version>10.1.0</version>
+        </dependency>-->
+        <!--可独立运行 dataservice (JVM running for 7.485) 包含reco-ide -->
+        <!--<dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-dataservice-ide</artifactId>
+            <version>10.1.22</version>
+        </dependency>-->
+        <!--可独立运行 flow (JVM running for 8.191) 包含reco-ide -->
         <!--<dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-flow</artifactId>
             <version>10.1.17</version>
         </dependency>-->
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-space</artifactId>
-            <version>10.6.766</version>
-        </dependency>
-        <!--可独立运行 iparkbase-->
+        <!--可独立运行 iparkbase (JVM running for 12.939) 包含reco-ide,oauth2,push,flow,pay -->
         <!--<dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-iparkbase</artifactId>
             <version>10.2.41</version>
         </dependency>-->
-        <!--可独立运行 z6-->
+        <!--可独立运行 space (JVM running for 15.191) 包含iparkbase -->
         <!--<dependency>
             <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-z6-ide</artifactId>
-            <version>10.5.93</version>
+            <artifactId>reco-space</artifactId>
+            <version>10.6.766</version>
         </dependency>-->
-        <!--可独立运行 policy-->
-        <!--<dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-policy-ide</artifactId>
-            <version>10.2.8</version>
-        </dependency>-->
-        <!--可独立运行 iparkplus-->
-        <!--<dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-iparkplus-ide</artifactId>
-            <version>10.2.1</version>
-        </dependency>-->
-        <!--可独立运行 oa-->
+        <!--可独立运行 oa (JVM running for 16.66) 包含space -->
         <!--<dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-oa-ide</artifactId>
             <version>10.5.37</version>
         </dependency>-->
-        <!--可独立运行 g6-->
+        <!--可独立运行 policy (JVM running for 17.562) 包含space,dataservice-->
         <!--<dependency>
             <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-g6-ide</artifactId>
-            <version>10.2.0</version>
+            <artifactId>reco-policy-ide</artifactId>
+            <version>10.2.8</version>
         </dependency>-->
-        <!--可独立运行 ieb-->
+        <!--可独立运行 iparkplus (JVM running for 21.723) 包含policy -->
+        <!--<dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-iparkplus-ide</artifactId>
+            <version>10.2.1</version>
+        </dependency>-->
+        <!--可独立运行 z6 (JVM running for 21.861) 包含space,dataservice -->
+        <!--<dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-z6-ide</artifactId>
+            <version>10.5.93</version>
+        </dependency>-->
+        <!--可独立运行 ieb (JVM running for 31.297) 包含policy -->
         <!--<dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-ieb-ide</artifactId>
             <version>10.2.0</version>
         </dependency>-->
-        <!--可独立运行 biparkall-->
+        <!--可独立运行 g6 (JVM running for 42.15) 包含oa,iparkplus,z6 -->
+        <!--<dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-g6-ide</artifactId>
+            <version>10.2.0</version>
+        </dependency>-->
+        <!--可独立运行 biparkall (JVM running for 58.167) 包含ieb,g6 -->
         <!--<dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-biparkall</artifactId>

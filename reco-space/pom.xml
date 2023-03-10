@@ -14,11 +14,6 @@
     <dependencies>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-ide</artifactId>
-            <version>10.1.22</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-iparkbase</artifactId>
             <version>10.2.41</version>
         </dependency>
