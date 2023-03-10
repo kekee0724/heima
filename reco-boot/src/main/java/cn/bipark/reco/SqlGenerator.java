@@ -134,7 +134,7 @@ public class SqlGenerator {
             // TODO 自己的处理逻辑
         }
 //        System.out.println(sqls);
-        StringToSql(sqls.toString(), "./sql/reco_boot.sql");
+        StringToSql(sqls.toString(), "./sql/reco_boot_ipark.sql");
     }
 
     /**

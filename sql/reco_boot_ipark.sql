@@ -2264,6 +2264,1213 @@ PRIMARY KEY (`id`) USING BTREE,
 INDEX `id`(`id`) USING BTREE ) 
 ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+/*========= StdPushBuffer ==========*/
+
+CREATE TABLE IF NOT EXISTS `std_push_buffer` ( 
+`id` bigint,
+`msg_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`platform` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`topic` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`routing_key` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`agent_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`target_user_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`target_user_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`msg_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`msg_content` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`raw_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`cover_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`msg_arguments` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`send_status` int,
+`send_status_text` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`plat_status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`plat_status_text` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`send_time` datetime,
+`delivery_time` datetime,
+`version` int,
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`inputer_id` bigint,
+`input_time` datetime,
+`input_ip` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`is_delete` bit(1),
+`msg_hash` bigint,
+`provider` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*========= StdUserMsgCount ==========*/
+
+CREATE TABLE IF NOT EXISTS `std_user_msg_count` ( 
+`id` bigint,
+`topic` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`agent_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`target_user_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`count` int,
+`data_day` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`version` int,
+`input_time` datetime,
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`inputer_id` bigint,
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*========= StdUserRepeatMsg ==========*/
+
+CREATE TABLE IF NOT EXISTS `std_user_repeat_msg` ( 
+`id` bigint,
+`topic` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`agent_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`target_user_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`data_day` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`msg` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`md5` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`input_time` datetime,
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`inputer_id` bigint,
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*========= StdDataTag ==========*/
+
+CREATE TABLE IF NOT EXISTS `std_data_tag` ( 
+`id` bigint comment 'id',
+`tag_class_id` bigint comment '标签id',
+`tag_class_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '标签名称',
+`tag_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '标签项',
+`tag_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '标签code',
+`tag_value` int comment '标签值',
+`number` int comment '数量',
+`sequence` int comment '排序',
+`source` int comment '标签来源( 1.自动生成 2.手动添加)',
+`remark` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '备注',
+`is_builtin` bit(1) comment '是否内置',
+`is_valid` bit(1) comment '是否有效',
+`statistics_sql` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '统计sql语句',
+`rate` decimal(20,4) comment '所占比例',
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '录入人',
+`inputer_id` bigint comment '录入人id',
+`input_time` datetime comment '录入时间',
+`is_delete` bit(1) comment '是否删除',
+`is_simulation` bit(1) comment '是否是模拟数据',
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci comment '数据标签项';
+
+/*========= StdDataTagClass ==========*/
+
+CREATE TABLE IF NOT EXISTS `std_data_tag_class` ( 
+`id` bigint comment 'id',
+`category` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '标签类别',
+`class_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '标签名称',
+`class_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '标签代码',
+`tag_group` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '标签分组',
+`tag_group_id` bigint comment '标签分组id',
+`tag_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '标签类型',
+`tag_type_value` int comment '标签类型value:1-自定义 2-SQL计算',
+`update_mode` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '更新方式:1-定期 2-手动',
+`update_mode_value` int comment '更新方式value',
+`update_frequency` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '更新频率',
+`update_frequency_value` int comment '更新频率:1-天 2-周',
+`remark` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '备注',
+`bind_table_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '绑定表名',
+`bind_table_column` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '绑定表字段',
+`data_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '数据类型:1-数值 2-布尔值 3-日期 4-字符串',
+`data_type_value` int comment '数据类型value',
+`data_explain` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '数据说明',
+`statistics_sql` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '统计sql语句',
+`statistics_column` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '统计字段',
+`statistics_number` int comment '统计数量',
+`is_builtin` bit(1) comment '是否内置',
+`sequence` int comment '排序',
+`last_update_time` datetime comment '最后更新时间',
+`is_valid` bit(1) comment '是否有效',
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '录入人',
+`inputer_id` bigint comment '录入人id',
+`input_time` datetime comment '录入时间',
+`is_delete` bit(1) comment '是否删除',
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci comment '数据标签';
+
+/*========= StdDataTagGroup ==========*/
+
+CREATE TABLE IF NOT EXISTS `std_data_tag_group` ( 
+`id` bigint comment 'id',
+`group_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '分组名称',
+`sequence` int comment '排序值',
+`remark` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '备注',
+`category` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '标签分组类别',
+`is_builtin` bit(1) comment '是否内置',
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '录入人',
+`inputer_id` bigint comment '录入人id',
+`input_time` datetime comment '录入时间',
+`is_delete` bit(1) comment '是否删除',
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci comment '数据标签分组';
+
+/*========= StdDataTagTarget ==========*/
+
+CREATE TABLE IF NOT EXISTS `std_data_tag_target` ( 
+`id` bigint comment 'id',
+`tag_class_id` bigint comment '标签分类id',
+`tag_id` bigint comment '标签项id',
+`tag_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '标签项',
+`bind_table_id` bigint comment '绑定业务id',
+`bind_table_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '绑定表名',
+`source` int comment '标签来源( 1.自动生成 2.手动添加)',
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '录入人',
+`inputer_id` bigint comment '录入人id',
+`input_time` datetime comment '录入时间',
+`is_delete` bit(1) comment '是否删除',
+`is_simulation` bit(1) comment '是否是模拟数据',
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci comment '数据标签与关联对象关系';
+
+/*========= StdConsumer ==========*/
+
+CREATE TABLE IF NOT EXISTS `std_consumer` ( 
+`id` bigint comment 'id',
+`account_id` bigint comment '账号id',
+`name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '姓名(单位名称)',
+`consumer_number` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '身份证号(社会信用代码)',
+`contact_mobile` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '联系人手机',
+`contact_tel` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '联系人电话',
+`contact_email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '联系人邮箱',
+`contact_fox` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '联系人传真',
+`contact_address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '联系地址',
+`tax_address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '税务登记地址',
+`tax_office_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '纳税税务所名称(标签)',
+`tax_office_value` int comment '纳税税务所值(标签)',
+`reg_amount` decimal(20,4) comment '注册资金',
+`reg_address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '注册地址',
+`work_tel` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '单位电话',
+`work_fax` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '单位传真',
+`staff_num` int comment '职工人数',
+`set_date` datetime comment '成立时间',
+`technical_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '技术领域名称(标签)',
+`technical_value` int comment '技术领域值(标签)',
+`unit_properties_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '单位性质名称(标签)',
+`unit_properties_value` int comment '单位性质值',
+`core_business` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '主营业务',
+`legal` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '法人',
+`legal_number` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '法人身份号码',
+`legal_mobile` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '法人手机',
+`legal_email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '法人邮箱',
+`contact_personal` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '联系人',
+`contact_number` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '联系人身份证号码',
+`bank_account_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '银行账户名称',
+`bank_account_number` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '银行账号',
+`bank_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '开户银行',
+`last_revenue` decimal(20,4) comment '上年度营收(万元)',
+`last_tax` decimal(20,4) comment '上年度税收(万元)',
+`remarks` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '备注',
+`consumer_type` int comment '用户类型',
+`is_complete` bit(1) comment '信息是否已完善',
+`is_delete` bit(1) comment '是否删除',
+`is_valid` bit(1) comment '是否启用',
+`birth_day` datetime comment '出生日期',
+`gender` int comment '性别',
+`graduate_school` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '毕业学校',
+`education_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '学历(标签)',
+`education_value` int comment '学历值(标签)',
+`work_specialty` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '从事专业',
+`study_specialty` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '所学专业',
+`technical_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '技术职称',
+`know_subject` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '熟悉学科',
+`society_part_time` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '社会兼职',
+`is_academician` bit(1) comment '是否院士',
+`is_judge_expert` bit(1) comment '是否担任评审专家',
+`awards_num` int comment '奖项、荣誉数',
+`project_num` int comment '主持重大项目数',
+`opus_num` int comment '发布论著数',
+`work_unit` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '工作单位',
+`position` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '职务',
+`work_address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '工作地址',
+`work_post` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '工作邮编',
+`second_unit` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '二级单位',
+`home_post` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '家庭邮编',
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '录入人',
+`inputer_id` bigint comment '录入人ID',
+`input_time` datetime comment '录入时间',
+`updater` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '更新人',
+`updater_id` bigint comment '更新人id',
+`update_time` datetime comment '更新时间',
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci comment '政策申报-用户管理';
+
+/*========= StdConsumerAcademic ==========*/
+
+CREATE TABLE IF NOT EXISTS `std_consumer_academic` ( 
+`id` bigint comment 'id',
+`consumer_id` bigint comment '政策申报用户id',
+`qualification` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '学历任职情况',
+`research` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '主要研究方向',
+`exchange` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '交流活动',
+`appraise` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '评审情况',
+`recruit` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '收录文章',
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci comment '专家学术背景';
+
+/*========= StdConsumerAchievement ==========*/
+
+CREATE TABLE IF NOT EXISTS `std_consumer_achievement` ( 
+`id` bigint comment 'id',
+`consumer_id` bigint comment '政策申报用户id',
+`name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '成果名称',
+`domain` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '领域/类别',
+`level` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '等级',
+`agency` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '所属单位',
+`finish_time` datetime comment '完成时间',
+`finish_users` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '完成人顺序',
+`evaluate` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '评价水平',
+`achieve_type` int comment '类型',
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci comment '研究成果';
+
+/*========= StdConsumerOpus ==========*/
+
+CREATE TABLE IF NOT EXISTS `std_consumer_opus` ( 
+`id` bigint comment 'ID',
+`consumer_id` bigint comment '政策申报用户id',
+`name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '名称',
+`domain` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '所属领域',
+`juarnal_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '刊物名称/出版社',
+`publish_time` datetime comment '出版日期',
+`level` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '刊物级别',
+`finish_users` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '完成人顺序',
+`opus_type` int comment '类别',
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci comment '著作/论文';
+
+/*========= BiPolicy ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_policy` ( 
+`id` bigint,
+`title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`publish_dept` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`publish_unit` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`policy_no` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`expiration_time` datetime,
+`address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`accep_window` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`accep_starttime` datetime,
+`accep_endtime` datetime,
+`key_words` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`sequence` int,
+`views` int,
+`source` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`policy_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`policy_type_value` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`policy_rank` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`policy_rank_value` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`publisher` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`publisher_id` bigint,
+`is_top` bit(1),
+`is_allow_declare` bit(1),
+`declare_start_time` datetime,
+`declare_end_time` datetime,
+`publish_time` datetime,
+`is_unscramble` bit(1),
+`unscramble_time` datetime,
+`has_implementation_detail` bit(1),
+`implementation_detail_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`policy_consult` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`technology_consult` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`other_consult` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`inputer_id` bigint,
+`input_time` datetime,
+`updater` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`updater_id` bigint,
+`update_time` datetime,
+`is_simulation` bit(1),
+`is_valid` bit(1),
+`is_delete` bit(1),
+`remarks` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*========= BiPolicyCalculatorOperateLog ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_policy_calculator_operate_log` ( 
+`id` bigint,
+`mobile` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`customer_id` bigint,
+`customer_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`operate_tag_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`match_detail_number` int,
+`source` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`source_value` int,
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`inputer_id` bigint,
+`input_time` datetime,
+`is_delete` bit(1),
+`operate_tag` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`operate_tag_json` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*========= BiPolicyCalculatorOperateLogItem ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_policy_calculator_operate_log_item` ( 
+`id` bigint,
+`operate_log_id` bigint,
+`match_detail_id` bigint,
+`match_degree` double precision,
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`inputer_id` bigint,
+`input_time` datetime,
+`is_delete` bit(1),
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*========= BiPolicyContent ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_policy_content` ( 
+`id` bigint,
+`content` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`support` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`conditions` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`process` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`documents` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`service` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`acquisition` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`suit_condition` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`prepare_condition` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`policy_consult` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`technology_consult` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`other_consult` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*========= BiPolicyDeclare ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_policy_declare` ( 
+`id` bigint,
+`declare_no` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`policy_id` bigint,
+`policy_implementation_detail_id` bigint,
+`policy_implementation_detail_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`real_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`customer_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`customer_id` bigint,
+`credit_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`reason` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`status` int,
+`park_id` bigint,
+`park_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`auditer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`auditer_id` bigint,
+`auditer_time` datetime,
+`inputer_mobile` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`inputer_id` bigint,
+`input_time` datetime,
+`is_delete` bit(1),
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*========= BiPolicyDeclareAttach ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_policy_declare_attach` ( 
+`id` bigint,
+`policy_id` bigint,
+`policy_implementation_detail_id` bigint,
+`file_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`attach_code` bigint,
+`is_required` bit(1),
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`inputer_id` bigint,
+`input_time` datetime,
+`is_delete` bit(1),
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*========= BiPolicyDeclareLog ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_policy_declare_log` ( 
+`id` bigint,
+`declare_id` bigint,
+`operation_value` int,
+`operation` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`remarks` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`inputer_id` bigint,
+`input_time` datetime,
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*========= BiPolicyImplementationDetail ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_policy_implementation_detail` ( 
+`id` bigint,
+`policy_id` bigint,
+`policy_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`implementation_detail_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`declare_start_time` datetime,
+`declare_end_time` datetime,
+`cash_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`cash_type_value` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`suit_object` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`suit_object_value` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`amount_subsidy` decimal(20,4),
+`qualification_identification` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`keywords` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`views` int,
+`is_allow_declare` bit(1),
+`is_publish` bit(1),
+`is_valid` bit(1),
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`inputer_id` bigint,
+`input_time` datetime,
+`is_delete` bit(1),
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*========= BiPolicyImplementationDetailCondition ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_policy_implementation_detail_condition` ( 
+`id` bigint,
+`policy_id` bigint,
+`implementation_detail_id` bigint,
+`implementation_detail_group_id` bigint,
+`implementation_detail_group_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`tag_id` bigint,
+`tag_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`judge_type` int,
+`data_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`data_type_value` int,
+`tag_item_id` bigint,
+`tag_item_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`tag_item_value` int,
+`min_value` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`max_value` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`is_publish` bit(1),
+`is_valid` bit(1),
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`inputer_id` bigint,
+`input_time` datetime,
+`is_delete` bit(1),
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*========= BiPolicyImplementationDetailConditionGroup ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_policy_implementation_detail_condition_group` ( 
+`id` bigint,
+`policy_id` bigint,
+`implementation_detail_id` bigint,
+`group_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`is_publish` bit(1),
+`is_valid` bit(1),
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`inputer_id` bigint,
+`input_time` datetime,
+`is_delete` bit(1),
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*========= BiPolicyImplementationDetailContent ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_policy_implementation_detail_content` ( 
+`id` bigint,
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`inputer_id` bigint,
+`input_time` datetime,
+`is_delete` bit(1),
+`declare_object` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`declare_condition` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`support_standard` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*========= BiPolicyImplementationDetailTarget ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_policy_implementation_detail_target` ( 
+`id` bigint,
+`policy_id` bigint,
+`implementation_detail_id` bigint,
+`bind_table_id` bigint,
+`bind_table_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`match_degree` double precision,
+`is_simulation` bit(1),
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`inputer_id` bigint,
+`input_time` datetime,
+`is_delete` bit(1),
+`match_reason` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*========= BiPolicyMaterialization ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_policy_materialization` ( 
+`id` bigint,
+`policy_id` bigint,
+`policy_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`policy_implementation_detail_item_id` bigint,
+`policy_implementation_detail_item_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`enterprise_id` bigint,
+`enterprise_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`enterprise_number` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`suit_object` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`suit_object_value` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`materialization_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`materialization_type_value` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`declaration_time` datetime,
+`materialization_time` datetime,
+`materialization_money` decimal(20,4),
+`materialization_content` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`inputer_id` bigint,
+`input_time` datetime,
+`is_delete` bit(1),
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*========= BiPolicyRelation ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_policy_relation` ( 
+`id` bigint,
+`policy_id` bigint,
+`parent_policy_id` bigint,
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`inputer_id` bigint,
+`input_time` datetime,
+`is_delete` bit(1),
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*========= BiPolicySubscribe ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_policy_subscribe` ( 
+`id` bigint comment 'id',
+`account_id` bigint comment '用户id',
+`policy_subscribe_tags` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '政策原文订阅的标签名称',
+`policy_subscribe_tag_ids` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '政策原文订阅的标签id',
+`implementation_subscribe_tags` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '实施细则订阅的标签名称',
+`implementation_subscribe_tag_ids` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '实施细则订阅的标签id',
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '录入人',
+`inputer_id` bigint comment '录入人id',
+`input_time` datetime comment '录入时间',
+`updater` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '更新人',
+`updater_id` bigint comment '更新人id',
+`update_time` datetime comment '更新日期',
+`is_delete` bit(1) comment '是否删除',
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci comment '政策订阅';
+
+/*========= BiPolicySubscribeLog ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_policy_subscribe_log` ( 
+`id` bigint comment 'id',
+`subscribe_id` bigint comment '订阅id',
+`account_id` bigint comment '用户id',
+`add_subscribe_tags` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '新增订阅的标签名称',
+`add_subscribe_tag_ids` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '新增订阅的标签id',
+`remove_subscribe_tags` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '移除订阅的标签名称',
+`remove_subscribe_tag_ids` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '移除订阅的标签id',
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '录入人',
+`inputer_id` bigint comment '录入人id',
+`input_time` datetime comment '录入时间',
+`is_delete` bit(1) comment '是否删除',
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*========= BiPolicySupport ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_policy_support` ( 
+`id` bigint,
+`policy_id` bigint,
+`policy_support_content` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`priority` int,
+`is_publish` bit(1),
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`inputer_id` bigint,
+`input_time` datetime,
+`is_delete` bit(1),
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*========= BiPolicySupportCondition ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_policy_support_condition` ( 
+`id` bigint,
+`policy_id` bigint,
+`policy_support_id` bigint,
+`policy_support_group_id` bigint,
+`policy_support_group_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`tag_id` bigint,
+`tag_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`judge_type` int,
+`data_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`data_type_value` int,
+`tag_item_id` bigint,
+`tag_item_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`tag_item_value` int,
+`min_value` bigint,
+`max_value` bigint,
+`is_publish` bit(1),
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`inputer_id` bigint,
+`input_time` datetime,
+`is_delete` bit(1),
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*========= BiPolicySupportConditionGroup ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_policy_support_condition_group` ( 
+`id` bigint,
+`policy_id` bigint,
+`policy_support_id` bigint,
+`group_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`is_publish` bit(1),
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`inputer_id` bigint,
+`input_time` datetime,
+`is_delete` bit(1),
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*========= BiPolicyTag ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_policy_tag` ( 
+`id` bigint,
+`bind_table_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`bind_table_id` bigint,
+`tag_class` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`tag_class_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`tag_id` bigint,
+`tag_value` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`tag_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`inputer_id` bigint,
+`input_time` datetime,
+`is_delete` bit(1),
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*========= BiPortraitGroup ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_portrait_group` ( 
+`id` bigint,
+`group_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`sequence` int,
+`remark` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`category` int,
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`inputer_id` bigint,
+`input_time` datetime,
+`is_delete` bit(1),
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*========= BiPortraitTag ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_portrait_tag` ( 
+`id` bigint,
+`category` int,
+`tag_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`tag_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`tag_group` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`tag_group_id` bigint,
+`tag_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`tag_type_value` int,
+`update_mode` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`update_mode_value` int,
+`update_frequency` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`update_frequency_value` int,
+`remark` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`bind_table_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`bind_table_column` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`data_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`data_type_value` int,
+`data_explain` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`tag_class_id` bigint,
+`tag_class_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`sql` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`statistics_column` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`statistics_number` int,
+`last_update_time` datetime,
+`is_valid` bit(1),
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`inputer_id` bigint,
+`input_time` datetime,
+`is_delete` bit(1),
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*========= BiPortraitTagItem ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_portrait_tag_item` ( 
+`id` bigint,
+`tag_id` bigint,
+`tag_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`number` int,
+`rate` decimal(20,4),
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`inputer_id` bigint,
+`input_time` datetime,
+`is_delete` bit(1),
+`is_simulation` bit(1),
+`tag_item` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*========= BiPortraitTagItemTarget ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_portrait_tag_item_target` ( 
+`id` bigint,
+`tag_id` bigint,
+`tag_item_id` bigint,
+`bind_table_id` bigint,
+`bind_table_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+`inputer_id` bigint,
+`input_time` datetime,
+`is_delete` bit(1),
+`is_simulation` bit(1),
+`tag_item` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*========= BiSpecial ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_special` ( 
+`id` bigint comment 'id',
+`name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '专项名称',
+`code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '专项编号',
+`short_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '专项简称',
+`policy_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '政策名称',
+`policy_id` bigint comment '政策id',
+`policy_implementation_detail_id` bigint comment '政策实施细则id',
+`policy_implementation_detail_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '政策实施细则title',
+`start_date` datetime comment '开始时间',
+`end_date` datetime comment '结束时间',
+`acceptance_flow_id` bigint comment '验收流程id',
+`contract_flow_id` bigint comment '合同流程id',
+`inspection_flow_id` bigint comment '中期检查流程id',
+`delay_flow_id` bigint comment '延期变更流程id',
+`prepose_special_id` bigint comment '前置申请单',
+`prepose_tip` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '前置申请单提示',
+`sequence` int comment '排序',
+`frequency_type` int comment '频率类型',
+`frequency` int comment '申报频率',
+`letter_commit` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '承诺书',
+`remarks` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '备注',
+`unit_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '单位名称',
+`unit_id` bigint comment '单位id',
+`is_valid` bit(1) comment '是否发布',
+`is_delete` bit(1) comment '是否删除',
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '录入人',
+`inputer_id` bigint comment '录入人ID',
+`input_time` datetime comment '录入时间',
+`updater` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '更新人',
+`updater_id` bigint comment '更新人id',
+`update_time` datetime comment '更新时间',
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci comment '专项信息';
+
+/*========= BiSpecialAppropriation ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_special_appropriation` ( 
+`id` bigint comment 'id',
+`name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '专项资金名称',
+`code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '批文号',
+`special_id` bigint comment '专项id',
+`special_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '专项名称',
+`flow_id` bigint comment '流程id',
+`is_delete` bit(1) comment '是否删除',
+`remarks` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '备注',
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '录入人',
+`inputer_id` bigint comment '录入人ID',
+`input_time` datetime comment '录入时间',
+`auditer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '确认人',
+`auditer_id` bigint comment '确认人id',
+`auditer_time` datetime comment '确认时间',
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci comment '拨款单';
+
+/*========= BiSpecialAppropriationItem ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_special_appropriation_item` ( 
+`id` bigint comment '0',
+`appropriation_id` bigint comment '拨款单id',
+`special_project_id` bigint comment '项目id',
+`project_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '项目名称',
+`project_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '项目编号',
+`consumer_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '用户名称',
+`consumer_id` bigint comment '用户id',
+`bank_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '开户银行',
+`bank_account_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '银行账户名称',
+`bank_account_number` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '银行账号',
+`sponsor_money` decimal(20,4) comment '资助金额',
+`funding_money` decimal(20,4) comment '已拨款金额',
+`appropriation_money` decimal(20,4) comment '本次拨款金额',
+`surplus_money` decimal(20,4) comment '剩余金额',
+`is_delete` bit(1) comment '是否删除',
+`remarks` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '备注',
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '录入人',
+`inputer_id` bigint comment '录入人ID',
+`input_time` datetime comment '录入时间',
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci comment '拨款单详情';
+
+/*========= BiSpecialFlow ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_special_flow` ( 
+`id` bigint comment 'id',
+`special_id` bigint comment '专项id',
+`flow_id` bigint comment '流程id',
+`flow_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '流程名称',
+`custom_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '自定义名称',
+`sequence` int comment '排序',
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '录入人',
+`inputer_id` bigint comment '录入人ID',
+`input_time` datetime comment '录入时间',
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci comment '专项流程';
+
+/*========= BiSpecialFlowNode ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_special_flow_node` ( 
+`id` bigint comment 'id',
+`special_id` bigint comment '专项id',
+`flow_id` bigint comment '流程id',
+`node_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '节点名称',
+`state_json` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '流程状态',
+`state_ids` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '流程状态id',
+`count_state_ids` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '统计状态id',
+`sequence` int comment '排序',
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '录入人',
+`inputer_id` bigint comment '录入人ID',
+`input_time` datetime comment '录入时间',
+`special_flow_id` bigint comment '专项流程id',
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci comment '专项流程节点';
+
+/*========= BiSpecialFlowNodeAuthRange ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_special_flow_node_auth_range` ( 
+`id` bigint comment 'id',
+`node_id` bigint comment '节点id',
+`bind_table_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '绑定表名称',
+`bind_table_id` bigint comment '绑定表id',
+`bind_table_value` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '绑定表值',
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '录入人',
+`inputer_id` bigint comment '录入人ID',
+`input_time` datetime comment '录入时间',
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci comment '专项流程节点授权范围';
+
+/*========= BiSpecialPermission ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_special_permission` ( 
+`id` bigint comment 'id',
+`special_id` bigint comment '专项id',
+`consumer_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '用户名称',
+`consumer_id` bigint comment '用户id',
+`start_date` datetime comment '申报开始时间',
+`end_date` datetime comment '申报结束时间',
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '录入人',
+`inputer_id` bigint comment '录入人ID',
+`input_time` datetime comment '录入时间',
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci comment '专项权限';
+
+/*========= BiSpecialProject ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_special_project` ( 
+`id` bigint comment 'id',
+`project_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '项目名称',
+`project_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '项目编号',
+`special_id` bigint comment '专项id',
+`special_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '专项名称',
+`flow_id` bigint comment '流程id',
+`flow_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '流程名称',
+`consumer_id` bigint comment '用户id',
+`consumer_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '用户名称',
+`credit_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '统一信用代码',
+`bank_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '开户银行',
+`bank_account_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '银行账户名称',
+`bank_account_number` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '银行账号',
+`declare_money` decimal(20,4) comment '申报金额',
+`sponsor_money` decimal(20,4) comment '资助金额',
+`funding_money` decimal(20,4) comment '拨款金额',
+`surplus_money` decimal(20,4) comment '剩余金额',
+`public_start_time` datetime comment '公示开始时间',
+`public_end_time` datetime comment '公示结束时间',
+`contact_personal` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '联系人',
+`contact_mobile` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '联系人手机',
+`contact_address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '联系地址',
+`is_establish` bit(1) comment '是否已立项',
+`project_date` datetime comment '立项日期',
+`flow_state_id` bigint comment '状态机id',
+`acceptance_state_id` bigint comment '验收单id',
+`contract_state_id` bigint comment '合同状态机id',
+`contract_start_time` datetime comment '合同开始时间',
+`contract_end_time` datetime comment '合同结束时间',
+`inspection_state_id` bigint comment '中期检查状态机id',
+`inspection_time` datetime comment '中期检查日期',
+`inspection_remind_time` datetime comment '中期检查提醒日期',
+`delay_state_id` bigint comment '延期变更状态机id',
+`delay_time` datetime comment '延期变更时间',
+`state` bigint comment '状态机状态值',
+`state_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '状态机状态值',
+`state_tag_value` int comment '状态标签值',
+`state_tag_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '状态标签名称',
+`reminder_time` datetime comment '验收提醒时间',
+`acceptance_time` datetime comment '验收时间',
+`project_start_time` datetime comment '项目开始日期',
+`project_end_time` datetime comment '项目结束日期',
+`is_delete` bit(1) comment '是否删除',
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '录入人',
+`inputer_id` bigint comment '录入人ID',
+`input_time` datetime comment '录入时间',
+`unit_id` bigint comment '单位id',
+`unit_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '单位名称',
+`updater` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '更新人',
+`updater_id` bigint comment '更新人id',
+`update_time` datetime comment '更新时间',
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci comment '专项申报项目';
+
+/*========= BiSpecialProjectAccountLog ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_special_project_account_log` ( 
+`id` bigint comment 'id',
+`special_project_id` bigint comment '申报项目ID',
+`project_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '项目名称',
+`project_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '项目编号',
+`project_date` datetime comment '申报时间',
+`policy_id` bigint comment '政策id',
+`policy_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '政策名称',
+`policy_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '政策类型',
+`policy_type_id` bigint comment '政策分类ID',
+`old_account_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '原账户名称',
+`old_bank_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '原开户银行',
+`old_bank_account` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '原银行账号',
+`new_account_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '新账户名称',
+`new_bank_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '新开户银行',
+`new_bank_account` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '新银行账号',
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '录入人',
+`inputer_id` bigint comment '录入人id',
+`input_time` datetime comment '录入时间',
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci comment '申报项目银行账户变更记录';
+
+/*========= BiSpecialProjectBatch ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_special_project_batch` ( 
+`id` bigint comment 'id',
+`batch_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '批次名称',
+`batch_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '批次code',
+`special_id` bigint comment '专项id',
+`flow_id` bigint comment '流程id',
+`is_appraise` bit(1) comment '是否评估',
+`appraise_start_time` datetime comment '评估开始时间',
+`appraise_end_time` datetime comment '评估结束时间',
+`responsibler` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '评估负责人',
+`responsibler_id` bigint comment '评估负责人ID',
+`review_type` int comment '评审方式',
+`review_end_date` datetime comment '网上评审结束日期',
+`status` int comment '批次阶段',
+`review_summary` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '评估总结',
+`leading_cadre` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '评估负责人',
+`leading_cadre_id` bigint comment '评估负责人ID',
+`review_time` datetime comment '复核日期',
+`review_confirm_time` datetime comment '复核确认日期',
+`approval_confirm_time` datetime comment '立项确认日期',
+`expert_assess_time` datetime comment '专家评审提交结果时间',
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '录入人',
+`inputer_id` bigint comment '录入人ID',
+`input_time` datetime comment '录入时间',
+`updater` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '更新人',
+`updater_id` bigint comment '更新人id',
+`update_time` datetime comment '更新时间',
+`is_delete` bit(1) comment '是否删除',
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci comment '专项审批批次';
+
+/*========= BiSpecialProjectBatchGroup ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_special_project_batch_group` ( 
+`id` bigint comment 'id',
+`batch_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '批次名称',
+`batch_id` bigint comment '批次id',
+`group_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '分组名称',
+`sequence` int comment '排序',
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '录入人',
+`inputer_id` bigint comment '录入人ID',
+`input_time` datetime comment '录入时间',
+`updater` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '更新人',
+`updater_id` bigint comment '更新人id',
+`update_time` datetime comment '更新时间',
+`is_delete` bit(1) comment '是否删除',
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci comment '专家评审分组';
+
+/*========= BiSpecialProjectBatchGroupItem ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_special_project_batch_group_item` ( 
+`id` bigint comment 'id',
+`batch_id` bigint comment '',
+`group_id` bigint comment '分组ID',
+`batch_item_id` bigint comment '批次明细ID',
+`bind_table_id` bigint comment '绑定表ID',
+`bind_table_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '绑定表名',
+`bind_table_value` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '绑定表值',
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '录入人',
+`inputer_id` bigint comment '录入人ID',
+`input_time` datetime comment '录入时间',
+`updater` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '更新人',
+`updater_id` bigint comment '更新人id',
+`update_time` datetime comment '更新时间',
+`is_delete` bit(1) comment '是否删除',
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci comment '专家评审分组明细';
+
+/*========= BiSpecialProjectBatchItem ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_special_project_batch_item` ( 
+`id` bigint comment 'id',
+`batch_id` bigint comment '批次ID',
+`project_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci not null comment '项目名称',
+`project_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '项目编号',
+`project_id` bigint comment '申报流程ID',
+`is_review` bit(1) comment '是否已评审',
+`project_approval_status` int comment '立项状态（0.默认状态 5.拟立项 -5.不予立项）',
+`support_amount` decimal(20,4) comment '拟资助金额',
+`support_amount_confirm` decimal(20,4) comment '资助金额',
+`approval_no` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '发文编号',
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '录入人',
+`inputer_id` bigint comment '录入人ID',
+`input_time` datetime comment '录入时间',
+`updater` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '更新人',
+`updater_id` bigint comment '更新人id',
+`update_time` datetime comment '更新时间',
+`is_delete` bit(1) comment '是否删除',
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci comment '专项审批批次明细';
+
+/*========= BiSpecialProjectBatchResult ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_special_project_batch_result` ( 
+`id` bigint comment 'id',
+`batch_id` bigint comment '批次ID',
+`batch_item_id` bigint comment '批次明细ID',
+`group_id` bigint comment '分组ID',
+`project_id` bigint comment '项目ID',
+`project_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '项目名称',
+`expert_id` bigint comment '专家ID',
+`expert_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '专家名称',
+`score` decimal(20,4) comment '评估分数',
+`amount` decimal(20,4) comment '建议资助金额(万元)',
+`opinion` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '专家意见',
+`is_valid` bit(1) comment '是否有效',
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '录入人',
+`inputer_id` bigint comment '录入人ID',
+`input_time` datetime comment '录入时间',
+`updater` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '更新人',
+`updater_id` bigint comment '更新人id',
+`update_time` datetime comment '更新时间',
+`is_delete` bit(1) comment '是否删除',
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci comment '专项审批批次评审结果';
+
+/*========= BiSpecialProjectBatchResultItem ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_special_project_batch_result_item` ( 
+`id` bigint comment 'id',
+`result_id` bigint comment '结果ID',
+`target_id` bigint comment '评价指标ID',
+`score` decimal(20,4) comment '得分',
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci comment '评审结果明细';
+
+/*========= BiSpecialProjectBatchResultTarget ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_special_project_batch_result_target` ( 
+`id` bigint comment 'id',
+`title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '标题',
+`parent_id` bigint comment '父级ID',
+`full_score` decimal(20,4) comment '满分',
+`hign` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '高分区间',
+`middle` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '中等区间',
+`low` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '低分区间',
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci comment '专家评审内容明细';
+
+/*========= BiSpecialProjectLog ==========*/
+
+CREATE TABLE IF NOT EXISTS `bi_special_project_log` ( 
+`id` bigint comment 'id',
+`special_project_id` bigint comment '项目id',
+`state` bigint comment '类型',
+`trigger_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '操作名称',
+`trigger_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '操作代码',
+`node_id` bigint comment '节点id',
+`node_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '节点名称',
+`is_state_log` bit(1) comment '是否状态机日期',
+`reason` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '原因',
+`description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '描述',
+`remarks` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '备注',
+`inputer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci comment '录入人',
+`inputer_id` bigint comment '录入人ID',
+`input_time` datetime comment '录入时间',
+PRIMARY KEY (`id`) USING BTREE,
+INDEX `id`(`id`) USING BTREE ) 
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci comment '专项申报项目日志';
+
 /*========= BiActivity ==========*/
 
 CREATE TABLE IF NOT EXISTS `bi_activity` ( 
