@@ -47,11 +47,6 @@
             <version>1.1.4</version>
         </dependency>
         <dependency>
-            <groupId>com.github.wechatpay-apiv3</groupId>
-            <artifactId>wechatpay-apache-httpclient</artifactId>
-            <version>0.2.2</version>
-        </dependency>
-        <dependency>
             <groupId>org.checkerframework.annotatedlib</groupId>
             <artifactId>commons-csv</artifactId>
             <version>1.8</version>
@@ -86,6 +81,21 @@
             <artifactId>reco-space</artifactId>
             <version>10.6.766</version>
         </dependency>
+        <dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-push</artifactId>
+            <version>10.5.53</version>
+        </dependency>
+        <!--<dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-dataservice-ide</artifactId>
+            <version>10.1.22</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-policy-ide</artifactId>
+            <version>10.2.8</version>
+        </dependency>-->
         <dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-activity-domain</artifactId>
