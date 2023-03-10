@@ -37,44 +37,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.alipay.sdk</groupId>
-            <artifactId>alipay-sdk-java</artifactId>
-            <version>4.10.170.ALL</version>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>open-api-sdk</artifactId>
-            <version>1.1.4</version>
-        </dependency>
-        <dependency>
-            <groupId>org.checkerframework.annotatedlib</groupId>
-            <artifactId>commons-csv</artifactId>
-            <version>1.8</version>
-        </dependency>
-        <dependency>
-            <groupId>org.jsoup</groupId>
-            <artifactId>jsoup</artifactId>
-            <version>1.13.1</version>
-        </dependency>
-        <dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-ide</artifactId>
             <version>10.1.22</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-oauth2</artifactId>
-            <version>10.1.4</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-pay</artifactId>
-            <version>10.1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-flow</artifactId>
-            <version>10.1.17</version>
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
@@ -95,6 +60,11 @@
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-policy-ide</artifactId>
             <version>10.2.8</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-iparkbase</artifactId>
+            <version>${iparkbase.version}</version>
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
@@ -321,167 +291,6 @@
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-topic-web</artifactId>
             <version>${ipark.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-analytics-domain</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-analytics-model</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-analytics-web</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-app-domain</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-app-model</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-app-web</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-article-domain</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-article-model</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-article-web</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-cash-domain</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-cash-model</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-cash-web</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-datatracker-domain</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-datatracker-model</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-importtask-domain</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-importtask-model</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-importtask-web</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-integral-domain</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-integral-model</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-integral-web</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-messagereach-domain</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-messagereach-model</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-messagereach-web</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-searcher-domain</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-searcher-model</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-searcher-web</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-universalsearch-domain</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-universalsearch-model</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-universalsearch-web</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-workorder-domain</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-workorder-model</artifactId>
-            <version>${iparkbase.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-workorder-web</artifactId>
-            <version>${iparkbase.version}</version>
         </dependency>
     </dependencies>
 

@@ -38,11 +38,12 @@
         钉钉扫码 Ding Talk Scan Controller
         reco-dgwork-model 10.1.4 reco-dingtalk-model 10.1.4
         reco-oauth2-model 10.1.4  reco-qq-model 10.1.4-->
-        <dependency>
+        <!--可独立运行-->
+        <!--<dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-oauth2</artifactId>
             <version>10.1.4</version>
-        </dependency>
+        </dependency>-->
         <!--abm分发  App Abm Distribute Controller  app配置管理  App Config Controller
         banner图设置  App Banner Controller  jpush-controller  Jpush Controller
         专家评审结果管理  Special Projec Batch Result Controller  专项信息管理  Special Controller
@@ -90,16 +91,29 @@
         话题管理  Topic Controller 资源管理  Resource Controller
         资源订单  Resource Order Controller 问卷管理  Questionnaire Controller
         问题库管理  Problem Controller-->
-        <dependency>
+        <!--可独立运行-->
+        <!--<dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-iparkplus-ide</artifactId>
             <version>10.2.1</version>
-        </dependency>
+        </dependency>-->
+        <!--可独立运行-->
+        <!--<dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-iparkbase</artifactId>
+            <version>10.2.41</version>
+        </dependency>-->
+        <!--可独立运行-->
         <!--<dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-z6-ide</artifactId>
             <version>10.5.93</version>
         </dependency>-->
+        <dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-oa-ide</artifactId>
+            <version>10.5.37</version>
+        </dependency>
         <!--测试对象管理 Order Controller-->
         <!--<dependency>
             <groupId>cn.bipark.reco</groupId>

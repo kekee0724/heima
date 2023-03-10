@@ -23,6 +23,7 @@
         <module>reco-push</module>
         <module>reco-dataservice-ide</module>
         <module>reco-iparkplus-ide</module>
+        <module>reco-iparkbase</module>
         <module>reco-oa-ide</module>
         <module>reco-space</module>
         <module>reco-z6-ide</module>
