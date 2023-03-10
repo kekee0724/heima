@@ -14,6 +14,13 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+    <properties>
+        <reco.version>10.2.1</reco.version>
+        <ipark.version>10.1.56</ipark.version>
+        <iparkbase.version>10.2.41</iparkbase.version>
+        <z6.version>10.6.766</z6.version>
+    </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -26,45 +33,19 @@
                 <artifactId>springfox-core</artifactId>
                 <version>3.0.1</version>
             </dependency>
+            <dependency>
+                <groupId>cn.bipark.reco</groupId>
+                <artifactId>reco-ide</artifactId>
+                <version>10.1.22</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <properties>
-        <reco.version>10.2.1</reco.version>
-        <ipark.version>10.1.56</ipark.version>
-        <iparkbase.version>10.2.41</iparkbase.version>
-    </properties>
 
     <dependencies>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-ide</artifactId>
-            <version>10.1.22</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-space</artifactId>
-            <version>10.6.766</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-push</artifactId>
-            <version>10.5.53</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-dataservice-ide</artifactId>
-            <version>10.1.22</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-policy-ide</artifactId>
             <version>10.2.8</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-iparkbase</artifactId>
-            <version>${iparkbase.version}</version>
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>

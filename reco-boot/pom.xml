@@ -94,12 +94,6 @@
         <!--可独立运行-->
         <!--<dependency>
             <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-iparkplus-ide</artifactId>
-            <version>10.2.1</version>
-        </dependency>-->
-        <!--可独立运行-->
-        <!--<dependency>
-            <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-iparkbase</artifactId>
             <version>10.2.41</version>
         </dependency>-->
@@ -109,10 +103,40 @@
             <artifactId>reco-z6-ide</artifactId>
             <version>10.5.93</version>
         </dependency>-->
+        <!--可独立运行-->
         <dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-policy-ide</artifactId>
+            <version>10.2.8</version>
+        </dependency>
+        <!--可独立运行-->
+        <!--<dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-iparkplus-ide</artifactId>
+            <version>10.2.1</version>
+        </dependency>-->
+        <!--可独立运行-->
+        <!--<dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-oa-ide</artifactId>
             <version>10.5.37</version>
+        </dependency>-->
+        <!--可独立运行-->
+        <!--<dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-g6-ide</artifactId>
+            <version>10.2.0</version>
+        </dependency>-->
+        <!--可独立运行-->
+        <!--<dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-ieb-ide</artifactId>
+            <version>10.2.0</version>
+        </dependency>-->
+        <dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-biparkall</artifactId>
+            <version>10.1.2</version>
         </dependency>
         <!--测试对象管理 Order Controller-->
         <!--<dependency>

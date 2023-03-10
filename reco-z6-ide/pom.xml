@@ -13,11 +13,21 @@
         <iparkbase.version>10.2.41</iparkbase.version>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>cn.bipark.reco</groupId>
+                <artifactId>reco-ide</artifactId>
+                <version>10.1.22</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
         <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-ide</artifactId>
-            <version>10.1.22</version>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>3.14.9</version>
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
@@ -26,8 +36,8 @@
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-space</artifactId>
-            <version>${z6.version}</version>
+            <artifactId>reco-dataservice-ide</artifactId>
+            <version>10.1.22</version>
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>

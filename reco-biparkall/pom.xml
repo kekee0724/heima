@@ -11,7 +11,27 @@
         <reco.version>10.1.2</reco.version>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>cn.bipark.reco</groupId>
+                <artifactId>reco-ide</artifactId>
+                <version>10.1.22</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
+        <dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-g6-ide</artifactId>
+            <version>10.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-ieb-ide</artifactId>
+            <version>10.2.0</version>
+        </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>biparkall-contract-web</artifactId>

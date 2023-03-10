@@ -11,7 +11,27 @@
         <reco.version>10.2.0</reco.version>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>cn.bipark.reco</groupId>
+                <artifactId>reco-ide</artifactId>
+                <version>10.1.22</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
+        <dependency>
+            <groupId>com.aliyun.api.gateway</groupId>
+            <artifactId>sdk-core-java</artifactId>
+            <version>1.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-policy-ide</artifactId>
+            <version>10.2.8</version>
+        </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-alient-domain</artifactId>

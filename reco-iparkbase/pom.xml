@@ -9,6 +9,7 @@
 
     <properties>
         <reco.version>10.2.41</reco.version>
+        <z6.version>10.6.766</z6.version>
     </properties>
 
     <dependencies>
@@ -44,13 +45,28 @@
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-pay</artifactId>
-            <version>10.1.0</version>
+            <artifactId>reco-oauth2</artifactId>
+            <version>10.1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-push</artifactId>
+            <version>10.5.53</version>
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-flow</artifactId>
             <version>10.1.17</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-pay</artifactId>
+            <version>10.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-space</artifactId>
+            <version>${z6.version}</version>
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
