@@ -38,7 +38,7 @@
         钉钉扫码 Ding Talk Scan Controller
         reco-dgwork-model 10.1.4 reco-dingtalk-model 10.1.4
         reco-oauth2-model 10.1.4  reco-qq-model 10.1.4-->
-        <!--可独立运行-->
+        <!--可独立运行 oauth2-->
         <!--<dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-oauth2</artifactId>
@@ -91,53 +91,83 @@
         话题管理  Topic Controller 资源管理  Resource Controller
         资源订单  Resource Order Controller 问卷管理  Questionnaire Controller
         问题库管理  Problem Controller-->
-        <!--可独立运行-->
+        <!--可独立运行 pay-->
+        <!--<dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-pay</artifactId>
+            <version>10.1.0</version>
+        </dependency>-->
+        <!--可独立运行 dataservice-->
+        <!--<dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-dataservice-ide</artifactId>
+            <version>10.1.22</version>
+        </dependency>-->
+        <!--可独立运行 push-->
+        <!--<dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-push</artifactId>
+            <version>10.5.53</version>
+        </dependency>-->
+        <!--可独立运行 flow-->
+        <!--<dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-flow</artifactId>
+            <version>10.1.17</version>
+        </dependency>-->
+        <dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-space</artifactId>
+            <version>10.6.766</version>
+        </dependency>
+        <!--可独立运行 iparkbase-->
         <!--<dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-iparkbase</artifactId>
             <version>10.2.41</version>
         </dependency>-->
-        <!--可独立运行-->
+        <!--可独立运行 z6-->
         <!--<dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-z6-ide</artifactId>
             <version>10.5.93</version>
         </dependency>-->
-        <!--可独立运行-->
-        <dependency>
+        <!--可独立运行 policy-->
+        <!--<dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-policy-ide</artifactId>
             <version>10.2.8</version>
-        </dependency>
-        <!--可独立运行-->
+        </dependency>-->
+        <!--可独立运行 iparkplus-->
         <!--<dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-iparkplus-ide</artifactId>
             <version>10.2.1</version>
         </dependency>-->
-        <!--可独立运行-->
+        <!--可独立运行 oa-->
         <!--<dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-oa-ide</artifactId>
             <version>10.5.37</version>
         </dependency>-->
-        <!--可独立运行-->
+        <!--可独立运行 g6-->
         <!--<dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-g6-ide</artifactId>
             <version>10.2.0</version>
         </dependency>-->
-        <!--可独立运行-->
+        <!--可独立运行 ieb-->
         <!--<dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-ieb-ide</artifactId>
             <version>10.2.0</version>
         </dependency>-->
-        <dependency>
+        <!--可独立运行 biparkall-->
+        <!--<dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-biparkall</artifactId>
             <version>10.1.2</version>
-        </dependency>
+        </dependency>-->
         <!--测试对象管理 Order Controller-->
         <!--<dependency>
             <groupId>cn.bipark.reco</groupId>

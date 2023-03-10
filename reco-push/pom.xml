@@ -18,9 +18,19 @@
             <version>1.5</version>
         </dependency>
         <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.5</version>
+        </dependency>
+        <dependency>
             <groupId>cn.jpush.api</groupId>
             <artifactId>jpush-client</artifactId>
             <version>3.4.4</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.bipark.reco</groupId>
+            <artifactId>reco-ide</artifactId>
+            <version>10.1.22</version>
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
@@ -36,11 +46,6 @@
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-middleware-sms-web</artifactId>
             <version>${reco.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-ide</artifactId>
-            <version>10.1.22</version>
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>

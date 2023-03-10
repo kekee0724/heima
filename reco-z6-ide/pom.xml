@@ -31,8 +31,8 @@
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
-            <artifactId>reco-iparkbase</artifactId>
-            <version>${iparkbase.version}</version>
+            <artifactId>reco-space</artifactId>
+            <version>${z6.version}</version>
         </dependency>
         <dependency>
             <groupId>cn.bipark.reco</groupId>
