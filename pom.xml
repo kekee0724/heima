@@ -15,7 +15,6 @@
     <packaging>pom</packaging>
 
     <modules>
-<!--        <module>reco-parent</module>-->
         <module>reco-ide</module>
         <module>reco-flow</module>
         <module>reco-office-ide</module>

@@ -23,11 +23,11 @@
         reco-dgwork-model 10.1.4 reco-dingtalk-model 10.1.4
         reco-oauth2-model 10.1.4  reco-qq-model 10.1.4-->
         <!--可独立运行 oauth2 (JVM running for 8.412) 包含reco-ide -->
-        <!--<dependency>
+        <dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-oauth2</artifactId>
             <version>10.1.4</version>
-        </dependency>-->
+        </dependency>
         <!---->
         <!--可独立运行 push (JVM running for 7.018) 包含reco-ide -->
         <!--<dependency>
@@ -102,16 +102,16 @@
             <version>10.2.0</version>
         </dependency>-->
         <!--可独立运行 biparkall (JVM running for 58.167) 包含ieb,g6 -->
-        <dependency>
+        <!--<dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-biparkall</artifactId>
             <version>10.1.2</version>
-        </dependency>
+        </dependency>-->
         <!--测试对象管理 Order Controller-->
         <!--<dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>r2035-rewrite-web</artifactId>
-            <version>10.0.1</version>
+            <version>10.1.22</version>
         </dependency>-->
     </dependencies>
 </project>
