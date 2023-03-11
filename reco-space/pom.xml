@@ -11,6 +11,12 @@
         <reco.version>10.6.766</reco.version>
     </properties>
 
+    <parent>
+        <groupId>cn.bipark.reco</groupId>
+        <artifactId>reco-parent</artifactId>
+        <version>10.1.22</version>
+    </parent>
+
     <dependencies>
         <dependency>
             <groupId>cn.bipark.reco</groupId>

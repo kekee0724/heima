@@ -11,6 +11,12 @@
         <reco.version>10.5.53</reco.version>
     </properties>
 
+    <parent>
+        <groupId>cn.bipark.reco</groupId>
+        <artifactId>reco-parent</artifactId>
+        <version>10.1.22</version>
+    </parent>
+
     <dependencies>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -20,7 +26,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.5</version>
+            <version>1.2.50</version>
         </dependency>
         <dependency>
             <groupId>cn.jpush.api</groupId>

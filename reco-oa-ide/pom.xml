@@ -13,15 +13,11 @@
         <iparkbase.version>10.2.41</iparkbase.version>
     </properties>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>cn.bipark.reco</groupId>
-                <artifactId>reco-ide</artifactId>
-                <version>10.1.22</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+    <parent>
+        <groupId>cn.bipark.reco</groupId>
+        <artifactId>reco-parent</artifactId>
+        <version>10.1.22</version>
+    </parent>
 
     <dependencies>
         <dependency>
