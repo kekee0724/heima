@@ -22,6 +22,11 @@
                 <artifactId>springfox-core</artifactId>
                 <version>3.0.1</version>
             </dependency>
+            <dependency>
+                <groupId>cn.bipark.reco</groupId>
+                <artifactId>reco-ide</artifactId>
+                <version>10.1.22</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -39,58 +44,12 @@
         reco-dgwork-model 10.1.4 reco-dingtalk-model 10.1.4
         reco-oauth2-model 10.1.4  reco-qq-model 10.1.4-->
         <!--可独立运行 oauth2 (JVM running for 8.412) 包含reco-ide -->
-        <dependency>
+        <!--<dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-oauth2</artifactId>
             <version>10.1.4</version>
-        </dependency>
-        <!--abm分发  App Abm Distribute Controller  app配置管理  App Config Controller
-        banner图设置  App Banner Controller  jpush-controller  Jpush Controller
-        专家评审结果管理  Special Projec Batch Result Controller  专项信息管理  Special Controller
-        专项申报项目表管理  Special Project Controller 交易管理  Pay Controller
-        企业主页信息管理  Company Home Page Controller  企业会员类型  Member User Type Controller
-        企业招聘信息管理  Company Recruitment Controller 企业看板-移动端  Company Dashboard Controller
-        企业账单  Business Bill Controller 优惠券管理  Coupon Controller
-        会员个人信息管理  Member Service User Social Information Controller 会员增量企业管理  Member Company Controller
-        会员工单管理  Member Service Work Order Controller 会员管理  Member Controller
-        会员认证管理  Member Authentication Controller 会议室管理  Space Meeting Room Controller
-        信息触达移动端管理  Push And Read Controller 全局搜索  Search Controller
-        公共举报(支持申诉)管理  Report Controller  公司信息管理  Company Controller
-        关注管理  Follow Controller  动态管理  Post Controller
-        客户管理  Customer Controller 工作流项目  Flow Project Controller
-        工单受理  Workorder Receiver Controller  工单管理  Workorder Controller
-        工单费用项目  Workorder Cost Controller  广告页设置  App Advertisement Page Controller
-        应用模块管理  App Module Controller  应用版本管理  App Version Controller
-        开票管理  Invoice Controller 微信支付付款  Wechatpay Controller
-        报名管理  Activity Apply Controller  报名表单管理  Activity Apply Form Controller
-        推荐区域管理  App Area Controller  支付宝付款  Alipay Controller
-        收藏管理  Std Collection Controller 政策实施细节管理  Policy Implementation Detail Controller
-        政策标签分组管理  Portrait Group Controller 政策标签管理  Portrait Tag Controller
-        政策标签项管理  Portrait Tag Item Controller 政策申报-用户管理  Consumer Controller
-        政策申报管理  Policy Declare Controller 政策管理  Policy Controller
-        政策计算器管理  Policy Calculator Controller 政策订阅  Policy Subscribe Controller
-        数据导入任务  Data Import Task Controller 数据标签  Data Tag Class Controller
-        数据标签分组  Data Tag Group Controller 数据标签项  Data Tag Controller
-        文章管理  Article Controller 服务联盟产品管理  Service Product Controller
-        服务联盟机构管理  Service Institution Controller 活动管理  Activity Controller
-        流程数据源  Flow Data Source Controller 流程类型  Flow Catalogue Controller
-        流程编号  Flow Number Controller 流程设计  Flow Design Controller
-        流程附件  Flow Attach Template Controller 流程验证规则  Flow Validation Controller
-        状态机项目  Flow State Controller
-        用户积分  Integral Controller 用户角色管理  Role User Controller
-        申报项目银行账户变更记录管理  Special Project Account Log Controller  看板-空间  Space Dashboard Controller
-        短信推送  Push Sms Controller  积分事件  Integral Event Controller
-        积分用户账套  Integral Set Controller  积分记录  Integral Operate Controller
-        积分说明  Integral Config Controller  空间-占用记录管理  Space Occupy Record Controller
-        空间-园区管理  Space Park Controller  空间-房间管理  Space Room Controller
-        空间-空间管理  Space Controller  空间-项目管理  Space Project Controller
-        空间-预订管理  Space Reservation Controller  答卷管理  Questionnaire Answer Controller
-        签到  Member Sign Controller  签到管理  Activity Sign In Controller
-        联系人分组管理  Contact Personal Group Controller  联系人管理  Contact Personal Controller
-        评价管理  Rate Controller 评论管理  Comment Controller
-        话题管理  Topic Controller 资源管理  Resource Controller
-        资源订单  Resource Order Controller 问卷管理  Questionnaire Controller
-        问题库管理  Problem Controller-->
+        </dependency>-->
+        <!---->
         <!--可独立运行 push (JVM running for 7.018) 包含reco-ide -->
         <!--<dependency>
             <groupId>cn.bipark.reco</groupId>
@@ -164,11 +123,11 @@
             <version>10.2.0</version>
         </dependency>-->
         <!--可独立运行 biparkall (JVM running for 58.167) 包含ieb,g6 -->
-        <!--<dependency>
+        <dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-biparkall</artifactId>
             <version>10.1.2</version>
-        </dependency>-->
+        </dependency>
         <!--测试对象管理 Order Controller-->
         <!--<dependency>
             <groupId>cn.bipark.reco</groupId>
