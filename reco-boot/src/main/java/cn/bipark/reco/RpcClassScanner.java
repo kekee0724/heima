@@ -23,11 +23,11 @@ import java.util.*;
 
 public class RpcClassScanner {
 
-    private static ResourcePatternResolver resourcePatternResolver = new PathMatchingResourcePatternResolver();
+    private static final ResourcePatternResolver resourcePatternResolver = new PathMatchingResourcePatternResolver();
     static final Logger logger = LoggerFactory.getLogger(RpcClassScanner.class);
     private static final String RESOURCE_PATTERN = "/**/*.class";
-    private static Set<Class<?>> classSet = new HashSet<>();
-    private static TypeFilter typeFilter = new AnnotationTypeFilter(Api.class, false, true);
+    private static final Set<Class<?>> classSet = new HashSet<>();
+    private static final TypeFilter typeFilter = new AnnotationTypeFilter(Api.class, false, true);
 
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
@@ -100,10 +100,7 @@ public class RpcClassScanner {
     }
 
     private static boolean matchesEntityTypeFilter(MetadataReader reader, MetadataReaderFactory readerFactory) throws IOException {
-        if (typeFilter.match(reader, readerFactory)) {
-            return true;
-        }
-        return false;
+        return typeFilter.match(reader, readerFactory);
     }
 
 

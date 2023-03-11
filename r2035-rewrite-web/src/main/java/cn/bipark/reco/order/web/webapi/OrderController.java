@@ -19,6 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -98,7 +99,7 @@ public class OrderController extends BaseController {
     @GetMapping("excel")
     public void excelTemplate(HttpServletResponse response) throws Exception {
         String filename = "测试对象表-导入模板.xls";
-        String name = new String(filename.getBytes("utf-8"), "ISO-8859-1");
+        String name = new String(filename.getBytes(StandardCharsets.UTF_8), StandardCharsets.ISO_8859_1);
         response.addHeader("Content-Disposition", "attachment;filename=" + name);
         response.setContentType("application/vnd.ms-excel;charset=gb2312");
 
@@ -111,7 +112,7 @@ public class OrderController extends BaseController {
     @GetMapping("export")
     public void exportExcel(HttpServletResponse response, OrderQuery query) throws Exception {
         String filename = "测试对象表.xls";
-        String name = new String(filename.getBytes("utf-8"), "ISO-8859-1");
+        String name = new String(filename.getBytes(StandardCharsets.UTF_8), StandardCharsets.ISO_8859_1);
         response.addHeader("Content-Disposition", "attachment;filename=" + name);
         response.setContentType("application/vnd.ms-excel;charset=gb2312");
 
