@@ -13,6 +13,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>io.github.openfeign</groupId>
+            <artifactId>feign-jackson</artifactId>
+            <version>11.0</version>
+        </dependency>
+        <dependency>
             <groupId>cn.bipark.reco</groupId>
             <artifactId>reco-office</artifactId>
             <version>${reco.version}</version>
