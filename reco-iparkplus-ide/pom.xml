@@ -3,7 +3,11 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>cn.bipark.reco</groupId>
+    <parent>
+        <groupId>cn.bipark.reco</groupId>
+        <artifactId>reco-parent</artifactId>
+        <version>10.1.22</version>
+    </parent>
     <artifactId>reco-iparkplus-ide</artifactId>
     <version>${reco.version}</version>
 
@@ -13,12 +17,6 @@
         <iparkbase.version>10.2.41</iparkbase.version>
         <z6.version>10.6.766</z6.version>
     </properties>
-
-    <parent>
-        <groupId>cn.bipark.reco</groupId>
-        <artifactId>reco-parent</artifactId>
-        <version>10.1.22</version>
-    </parent>
 
     <dependencies>
         <dependency>
