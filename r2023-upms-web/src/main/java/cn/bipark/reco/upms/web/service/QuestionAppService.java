@@ -26,9 +26,9 @@ public class QuestionAppService extends BaseAppService {
     private final BiQuestionColumn.BiQuestion tc = BiQuestionColumn.biQuestion;
 
     /**
-     *根据ID获取未知对象详情
+     *根据ID获取题目详情
      * @param id
-     * @return  未知对象详情VM
+     * @return  题目详情VM
      */
     public QuestionDetailVM get(Long id) {
         var entity = resolve(QuestionRepository.class).get(id);
@@ -38,18 +38,18 @@ public class QuestionAppService extends BaseAppService {
     }
 
     /**
-     * 分页查询未知对象
+     * 分页查询题目
      * @param query 查询条件
-     * @return  未知对象列表VM
+     * @return  题目列表VM
      */
     public PagedList<QuestionListVM> getPaged(QuestionQuery query) {
         return PageUtils.map(resolve(QuestionRepository.class).getPaged(getQueryDsl(query), query), QuestionListVM.class);
     }
 
     /**
-     * 获取全部未知对象-不分页
+     * 获取全部题目-不分页
      * @param query 查询条件
-     * @return  未知对象列表VM
+     * @return  题目列表VM
      */
     public List<QuestionListVM> getAll(QuestionQuery query) {
         return PageUtils.map(resolve(QuestionRepository.class).getAll(getQueryDsl(query)), QuestionListVM.class);
@@ -69,7 +69,7 @@ public class QuestionAppService extends BaseAppService {
     }
 
     /**
-     * 获取符合查询条件的未知对象数量
+     * 获取符合查询条件的题目数量
      * @param query 查询条件
      * @return  数量
      */
@@ -78,8 +78,8 @@ public class QuestionAppService extends BaseAppService {
     }
 
     /**
-     * 新增未知对象
-     * @param vm    未知对象表单VM
+     * 新增题目
+     * @param vm    题目表单VM
      * @return  新对象ID
      */
     @Transactional
@@ -90,8 +90,8 @@ public class QuestionAppService extends BaseAppService {
     }
 
     /**
-     * 根据ID更新未知对象
-     * @param vm    未知对象表单VM
+     * 根据ID更新题目
+     * @param vm    题目表单VM
      * @param id    对象ID
      * @return  是否成功
      */
@@ -102,7 +102,7 @@ public class QuestionAppService extends BaseAppService {
     }
 
     /**
-     * 根据ID删除未知对象
+     * 根据ID删除题目
      * @param id    对象ID
      * @return  是否成功
      */
@@ -118,7 +118,7 @@ public class QuestionAppService extends BaseAppService {
     }
 
     /**
-     * 批量删除未知对象
+     * 批量删除题目
      * @param ids   对象ID数组
      * @return  成功数量
      */

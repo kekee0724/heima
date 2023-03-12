@@ -6,7 +6,7 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * 未知对象-导入VM
+ * 题目-导入VM
  */
 @Data
 public class QuestionImportVM {

@@ -8,9 +8,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 /**
- * 未知对象 from DB table ： bi_question.
+ * 题目 from DB table ： bi_question.
  */
-@ApiModel(value = "未知对象")
+@ApiModel(value = "题目")
 @Data
 public class BiQuestion implements Entity {
 

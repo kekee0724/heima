@@ -8,21 +8,21 @@ import org.springframework.stereotype.Component;
 @Component
 public class QuestionEntity extends BaseAggregate<BiQuestion> {
     /**
-     * 通知未知对象被创建
+     * 通知题目被创建
      */
     public void notifyCreated() {
         publish(new QuestionCreatedEvent(getData()));
     }
 
     /**
-     * 通知未知对象被更新
+     * 通知题目被更新
      */
     public void notifyUpdated() {
         publish(new QuestionUpdatedEvent(getData()));
     }
 
     /**
-     * 通知未知对象被删除
+     * 通知题目被删除
      */
     public void notifyDeleted() {
         publish(new QuestionDeletedEvent(getData()));

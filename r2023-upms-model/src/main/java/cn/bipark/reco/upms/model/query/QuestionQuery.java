@@ -8,7 +8,7 @@ import java.util.Date;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-@ApiModel(value = "未知对象查询条件")
+@ApiModel(value = "题目查询条件")
 public class QuestionQuery extends BasePagedQuery {
 
 	/** 

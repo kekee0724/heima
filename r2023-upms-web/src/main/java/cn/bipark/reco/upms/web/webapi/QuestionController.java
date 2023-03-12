@@ -49,78 +49,78 @@ import java.util.List;
 @PreAuthorize("permitAll()")
 @RestController("upms.question")
 @RequestMapping("/upms/question")
-@Api(tags = "未知对象管理")
+@Api(tags = "题目管理")
 @Mark(QuestionFormVM.class)
 // @ConditionalOnProperty(prefix = "reco.platform.webapi", name = "enabled", havingValue = "true")
 public class QuestionController extends BaseController {
 
-    @ApiOperation(value = "未知对象-获取详情")
+    @ApiOperation(value = "题目-获取详情")
     @GetMapping("{id}")
     public QuestionDetailVM get(@PathVariable Long id) {
         return resolve(QuestionAppService.class).get(id);
     }
 
-    @ApiOperation(value = "未知对象-分页查询")
+    @ApiOperation(value = "题目-分页查询")
     @GetMapping()
     public PagedList<QuestionListVM> getPaged(QuestionQuery query) {
         return resolve(QuestionAppService.class).getPaged(query);
     }
 
-    @ApiOperation(value = "未知对象-查询数量")
+    @ApiOperation(value = "题目-查询数量")
     @GetMapping("count")
     public long count(QuestionQuery query) {
         return resolve(QuestionAppService.class).count(query);
     }
 
-    @ApiOperation(value = "未知对象-查询全部")
+    @ApiOperation(value = "题目-查询全部")
     @GetMapping("list")
     public List<QuestionListVM> getList(QuestionQuery query) {
         return resolve(QuestionAppService.class).getAll(query);
     }
 
 //    @PreAuthorize("hasAuthority('QUESTION_DEL')")
-//    @PostAuthorize("appLog('UPMS', '删除未知对象', '编号%d', #id)")
-    @ApiOperation(value = "未知对象-删除")
+//    @PostAuthorize("appLog('UPMS', '删除题目', '编号%d', #id)")
+    @ApiOperation(value = "题目-删除")
     @DeleteMapping("{id}")
     public boolean delete(@PathVariable Long id) {
         return resolve(QuestionAppService.class).delete(id);
     }
 
 //    @PreAuthorize("hasAuthority('QUESTION_DEL')")
-//    @PostAuthorize("appLog('UPMS', '批量删除未知对象', '编号%s', #ids)")
-    @ApiOperation(value = "未知对象-批量删除")
+//    @PostAuthorize("appLog('UPMS', '批量删除题目', '编号%s', #ids)")
+    @ApiOperation(value = "题目-批量删除")
     @PutMapping("batch-delete")
     public int batchDelete(@RequestBody Long[] ids) {
         return resolve(QuestionAppService.class).batchDelete(ids);
     }
 
 //    @PreAuthorize("hasAuthority('QUESTION_ADD')")
-//    @PostAuthorize("appLog('UPMS', '添加未知对象', '%s，编号%d', #vm.toString(), returnObject)")
-    @ApiOperation(value = "未知对象-添加")
+//    @PostAuthorize("appLog('UPMS', '添加题目', '%s，编号%d', #vm.toString(), returnObject)")
+    @ApiOperation(value = "题目-添加")
     @PostMapping()
     public Long post(@Valid @RequestBody QuestionFormVM vm) {
         return resolve(QuestionAppService.class).post(vm);
     }
 
 //    @PreAuthorize("hasAuthority('QUESTION_EDIT')")
-//    @PostAuthorize("appLog('UPMS', '修改未知对象', '%s，编号%d', #vm.toString(), #id)")
-    @ApiOperation(value = "未知对象-修改")
+//    @PostAuthorize("appLog('UPMS', '修改题目', '%s，编号%d', #vm.toString(), #id)")
+    @ApiOperation(value = "题目-修改")
     @PutMapping("{id}")
     public boolean put(@PathVariable Long id, @Valid @RequestBody QuestionFormVM vm) {
         return resolve(QuestionAppService.class).put(vm, id);
     }
 
-    @ApiOperation(value = "未知对象-导入Excel")
+    @ApiOperation(value = "题目-导入Excel")
     @PostMapping("import")
     public boolean importExcel(@RequestParam("file") MultipartFile file) {
         List<QuestionImportVM> list = EasyExcelUtil.importExcel(file, QuestionImportVM.class);
         return resolve(QuestionAppService.class).importList(list);
     }
 
-    @ApiOperation(value = "未知对象-下载Excel导入模板")
+    @ApiOperation(value = "题目-下载Excel导入模板")
     @GetMapping("excel")
     public void excelTemplate(HttpServletResponse response) throws Exception {
-        String filename = "未知对象表-导入模板.xls";
+        String filename = "题目表-导入模板.xls";
         String name = new String(filename.getBytes("utf-8"), "ISO-8859-1");
         response.addHeader("Content-Disposition", "attachment;filename=" + name);
         response.setContentType("application/vnd.ms-excel;charset=gb2312");
@@ -130,10 +130,10 @@ public class QuestionController extends BaseController {
         EasyExcelUtil.exportExcel(list, response.getOutputStream());
     }
 
-    @ApiOperation(value = "未知对象-导出Excel")
+    @ApiOperation(value = "题目-导出Excel")
     @GetMapping("export")
     public void exportExcel(HttpServletResponse response, QuestionQuery query) throws Exception {
-        String filename = "未知对象表.xls";
+        String filename = "题目表.xls";
         String name = new String(filename.getBytes("utf-8"), "ISO-8859-1");
         response.addHeader("Content-Disposition", "attachment;filename=" + name);
         response.setContentType("application/vnd.ms-excel;charset=gb2312");

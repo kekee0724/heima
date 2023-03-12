@@ -8,7 +8,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
-@ApiModel(value = "未知对象-列表VM")
+@ApiModel(value = "题目-列表VM")
 @Data
 public class QuestionListVM {
 

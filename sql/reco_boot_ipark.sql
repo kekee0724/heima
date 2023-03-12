@@ -5466,7 +5466,7 @@ CREATE TABLE IF NOT EXISTS `std_app_win` (
 `is_delete` bit(1) comment '是否删除',
 PRIMARY KEY (`id`) USING BTREE,
 INDEX `id`(`id`) USING BTREE ) 
-ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci comment '未知对象';
+ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci comment '题目';
 
 /*========= StdArticle ==========*/
 

@@ -3,7 +3,7 @@ package cn.bipark.reco.upms.model.exception;
 import cn.bipark.reco.core.model.exception.AppException;
 
 /**
-* 未知对象 异常
+* 题目 异常
 */
 public class QuestionException extends AppException {
     public QuestionException() {
