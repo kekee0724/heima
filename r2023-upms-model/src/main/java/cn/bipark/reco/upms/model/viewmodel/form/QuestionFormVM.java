@@ -14,48 +14,6 @@ import lombok.Data;
 public class QuestionFormVM {
 
 	/** 
-	 * questionnaireId 
-	 */
-	@ApiModelProperty(value = "questionnaireId", example = "1234567890123", dataType = "String")
-	private Long questionnaireId;
-	/** 
-	 * logicalType 
-	 */
-	@ApiModelProperty(value = "logicalType", example = "1")
-	private Integer logicalType;
-	/** 
-	 * businessType 
-	 */
-	@ApiModelProperty(value = "businessType", example = "1")
-	private Integer businessType;
-	/** 
-	 * sequence 
-	 */
-	@ApiModelProperty(value = "sequence", example = "1")
-	private Integer sequence;
-	/** 
-	 * isLibrary 
-	 */
-	@ApiModelProperty(value = "isLibrary", example = "false")
-	private Boolean isLibrary;
-	/** 
-	 * isBuiltin 
-	 */
-	@ApiModelProperty(value = "isBuiltin", example = "false")
-	private Boolean isBuiltin;
-	/** 
-	 * description 
-	 */
-	@Size(max = 255)
-	@ApiModelProperty(value = "description", example = "测试用的中文内容")
-	private String description;
-	/** 
-	 * title 
-	 */
-	@Size(max = 255)
-	@ApiModelProperty(value = "title", example = "测试用的中文内容")
-	private String title;
-	/** 
 	 * 题型 1 单选，2多选 
 	 */
 	@ApiModelProperty(value = "题型 1 单选，2多选", example = "1")

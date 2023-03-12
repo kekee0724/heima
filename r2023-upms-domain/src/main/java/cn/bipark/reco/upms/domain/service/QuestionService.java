@@ -5,10 +5,7 @@ import cn.bipark.reco.core.util.PageUtils;
 import cn.bipark.reco.upms.domain.entity.QuestionEntity;
 import cn.bipark.reco.upms.domain.repository.QuestionRepository;
 import cn.bipark.reco.upms.model.entity.BiQuestion;
-import cn.bipark.reco.upms.model.viewmodel.list.QuestionListVM;
 import cn.bipark.reco.upms.model.viewmodel.form.QuestionFormVM;
-import cn.bipark.reco.upms.model.viewmodel.detail.QuestionDetailVM;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
