@@ -31,9 +31,9 @@
         <module>reco-policy-ide</module>
         <module>reco-ieb-ide</module>
         <module>reco-biparkall</module>
-        <module>r2035-rewrite-model</module>
-        <module>r2035-rewrite-domain</module>
-        <module>r2035-rewrite-web</module>
+        <module>r2023-upms-model</module>
+        <module>r2023-upms-domain</module>
+        <module>r2023-upms-web</module>
         <module>reco-boot</module>
         <module>springfox-boot-starter</module>
     </modules>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="cn.bipark.reco.upms.model.mapper.BiUserLevelMapper">
+	
+	<sql id="UserLevelWhere">
+		<where>	      				
+	       <if test="@Ognl@isNotEmpty(userId)">
+				AND t.user_id = #{userId}
+			</if>
+	       <if test="@Ognl@isNotEmpty(levelId)">
+				AND t.level_id = #{levelId}
+			</if>
+	       <if test="@Ognl@isNotEmpty(questions)">
+				AND t.questions = #{questions}
+			</if>
+		</where>
+	</sql>
+
+    <select id="findBy" resultType="cn.bipark.reco.upms.model.viewmodel.list.UserLevelListVM">
+    	SELECT 
+			t.id				id,
+			t.user_id				userId,
+			t.level_id				levelId,
+			t.questions				questions
+	    FROM bi_user_level t 
+		<include refid="UserLevelWhere"/>		
+		<if test="@Ognl@isNotEmpty(orderBy)">
+			ORDER BY ${orderBy}
+		</if>
+    </select>
+	
+</mapper>
+

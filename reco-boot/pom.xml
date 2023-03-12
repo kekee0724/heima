@@ -108,10 +108,10 @@
             <version>10.1.2</version>
         </dependency>-->
         <!--测试对象管理 Order Controller-->
-        <!--<dependency>
+        <dependency>
             <groupId>cn.bipark.reco</groupId>
-            <artifactId>r2035-rewrite-web</artifactId>
+            <artifactId>r2023-upms-web</artifactId>
             <version>10.1.22</version>
-        </dependency>-->
+        </dependency>
     </dependencies>
 </project>

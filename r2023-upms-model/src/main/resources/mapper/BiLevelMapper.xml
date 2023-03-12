@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="cn.bipark.reco.upms.model.mapper.BiLevelMapper">
+	
+	<sql id="LevelWhere">
+		<where>	      				
+	       <if test="@Ognl@isNotEmpty(title)">
+				AND t.title = #{title}
+			</if>
+	       <if test="@Ognl@isNotEmpty(content)">
+				AND t.content = #{content}
+			</if>
+	       <if test="@Ognl@isNotEmpty(cover)">
+				AND t.cover = #{cover}
+			</if>
+	       <if test="@Ognl@isNotEmpty(startTimeBegin)">
+				AND t.start_time >= #{startTimeBegin}
+		   </if>
+		   <if test="@Ognl@isNotEmpty(startTimeEnd)">
+				AND t.start_time &lt;= #{startTimeEnd}
+		   </if>
+	       <if test="@Ognl@isNotEmpty(endTimeBegin)">
+				AND t.end_time >= #{endTimeBegin}
+		   </if>
+		   <if test="@Ognl@isNotEmpty(endTimeEnd)">
+				AND t.end_time &lt;= #{endTimeEnd}
+		   </if>
+	       <if test="@Ognl@isNotEmpty(retainTime)">
+				AND t.retain_time = #{retainTime}
+			</if>
+	       <if test="@Ognl@isNotEmpty(isCurrent)">
+				AND t.is_current = #{isCurrent}
+			</if>
+		</where>
+	</sql>
+
+    <select id="findBy" resultType="cn.bipark.reco.upms.model.viewmodel.list.LevelListVM">
+    	SELECT 
+			t.id				id,
+			t.title				title,
+			t.content				content,
+			t.cover				cover,
+			t.start_time				startTime,
+			t.end_time				endTime,
+			t.retain_time				retainTime,
+			t.is_current				isCurrent
+	    FROM bi_level t 
+		<include refid="LevelWhere"/>		
+		<if test="@Ognl@isNotEmpty(orderBy)">
+			ORDER BY ${orderBy}
+		</if>
+    </select>
+	
+</mapper>
+
