@@ -24,15 +24,15 @@
         </dependency>
         <!--如果要使用servlet必须添加该以下两个依赖-->
         <!-- servlet依赖的jar包-->
-        <!--<dependency>
+        <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-        </dependency>-->
-        <!--<dependency>
+        </dependency>
+        <dependency>
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>javax.servlet.jsp-api</artifactId>
             <version>2.3.1</version>
-        </dependency>-->
+        </dependency>
         <!--
         OAuth2 OAuth2 Controller QQ QQ Controller
         二维码QR Code Controller 企业微信 Wechat EP Controller
@@ -135,6 +135,10 @@
             <groupId>cn.bipark.reco</groupId>
             <artifactId>r2023-upms-web</artifactId>
             <version>10.1.22</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
         </dependency>
     </dependencies>
 
