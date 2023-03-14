@@ -4,6 +4,7 @@ import cn.bipark.reco.core.autoconfigure.DynamicAutoConfigurationImportSelector;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Import;
@@ -13,6 +14,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableCaching
 @SpringBootApplication
 @Import({DynamicAutoConfigurationImportSelector.class})
+@ServletComponentScan("cn.bipark.reco.servlet")
 public class RecoApplication extends SpringBootServletInitializer {
     public RecoApplication() {
     }
