@@ -36,6 +36,7 @@
         <module>r2023-upms-web</module>
         <module>reco-boot</module>
         <module>springfox-boot-starter</module>
+        <module>reco-bean</module>
     </modules>
 
     <dependencyManagement>
