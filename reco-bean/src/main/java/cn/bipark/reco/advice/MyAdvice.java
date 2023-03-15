@@ -50,7 +50,7 @@ public class MyAdvice {
     }
 
     // 有异常才会执行
-    @AfterReturning("pt2()")
+    @AfterThrowing("pt2()")
     public void afterThrowing() {
         System.out.println("afterThrowing advice ...");
     }

@@ -8,6 +8,7 @@ import javax.annotation.PreDestroy;
 
 @Repository
 //@Scope("prototype")
+@Deprecated
 public class UserDaoImpl implements UserDao {
 
     @PostConstruct

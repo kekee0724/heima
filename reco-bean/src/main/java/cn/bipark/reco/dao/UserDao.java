@@ -1,5 +1,6 @@
 package cn.bipark.reco.dao;
 
+@Deprecated
 public interface UserDao {
     void update();
 
