@@ -30,4 +30,11 @@ public class UserDaoImpl implements UserDao {
     public int select() {
         return 100;
     }
+
+    @Override
+    public String findName(int id) throws ArithmeticException {
+        int i = 100 / 0;
+        System.out.println("id:" + id);
+        return "itcast";
+    }
 }

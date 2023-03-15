@@ -17,8 +17,9 @@ public class Application {
 //        System.out.println(userService.getClass());
         UserDao userDao = ctx.getBean(UserDao.class);
 //        userDao.update();
-        System.out.println(userDao.select());
-        System.out.println(userDao.toString() + ": " + userDao.getClass());
+//        System.out.println(userDao.select());
+//        System.out.println(userDao.toString() + ": " + userDao.getClass());
+        System.out.println(userDao.findName(100));
 //        ctx.close(); // 手工关闭容器
     }
 }

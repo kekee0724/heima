@@ -6,4 +6,6 @@ public interface UserDao {
 
     int select();
 
+    String findName(int id);
+
 }
