@@ -13,13 +13,14 @@ public class Application {
         ConfigurableApplicationContext ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
 //        ClassPathXmlApplicationContext ctx =new ClassPathXmlApplicationContext("application-context.xml");
         ctx.registerShutdownHook(); // 注册关闭钩子
-//        UserService userService = ctx.getBean(UserService.class);
+        UserService userService = ctx.getBean(UserService.class);
 //        System.out.println(userService.getClass());
-        UserDao userDao = ctx.getBean(UserDao.class);
+//        UserDao userDao = ctx.getBean(UserDao.class);
 //        userDao.update();
 //        System.out.println(userDao.select());
 //        System.out.println(userDao.toString() + ": " + userDao.getClass());
-        System.out.println(userDao.findName(100));
+//        System.out.println(userDao.findName(100));
+        System.out.println(userService.openURL("http", "root "));
 //        ctx.close(); // 手工关闭容器
     }
 }

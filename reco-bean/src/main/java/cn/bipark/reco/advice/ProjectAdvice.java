@@ -16,7 +16,7 @@ public class ProjectAdvice {
     private void servicePt() {
     }
 
-    @Around("servicePt()")
+//    @Around("servicePt()")
     public Object runSpeed(ProceedingJoinPoint pjp) throws Throwable {
         Signature signature = pjp.getSignature();
         String className = signature.getDeclaringTypeName();

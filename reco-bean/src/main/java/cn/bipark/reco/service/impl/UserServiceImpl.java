@@ -70,4 +70,8 @@ public class UserServiceImpl implements UserService, InitializingBean, Disposabl
         return userMapper.findById(id);
     }
 
+    @Override
+    public boolean openURL(String url, String password) {
+        return "root".equals(password);
+    }
 }
