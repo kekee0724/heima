@@ -74,4 +74,11 @@ public class UserServiceImpl implements UserService, InitializingBean, Disposabl
     public boolean openURL(String url, String password) {
         return "root".equals(password);
     }
+
+    @Override
+    public void transfer(String out, String in, Double money) {
+        userMapper.outMoney(out, money);
+        int i = 1 / 0;
+        userMapper.inMoney(in, money);
+    }
 }

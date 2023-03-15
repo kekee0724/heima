@@ -20,7 +20,8 @@ public class Application {
 //        System.out.println(userDao.select());
 //        System.out.println(userDao.toString() + ": " + userDao.getClass());
 //        System.out.println(userDao.findName(100));
-        System.out.println(userService.openURL("http", "root "));
+//        System.out.println(userService.openURL("http", "root "));
+        userService.transfer("shinelymi", "admin", 100D);
 //        ctx.close(); // 手工关闭容器
     }
 }
