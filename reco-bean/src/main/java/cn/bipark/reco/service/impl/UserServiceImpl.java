@@ -2,6 +2,7 @@ package cn.bipark.reco.service.impl;
 
 import cn.bipark.reco.domain.User;
 import cn.bipark.reco.mapper.UserMapper;
+import cn.bipark.reco.service.LogService;
 import cn.bipark.reco.service.UserService;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
@@ -75,10 +76,17 @@ public class UserServiceImpl implements UserService, InitializingBean, Disposabl
         return "root".equals(password);
     }
 
+    @Autowired
+    private LogService logService;
+
     @Override
     public void transfer(String out, String in, Double money) {
-        userMapper.outMoney(out, money);
-        int i = 1 / 0;
-        userMapper.inMoney(in, money);
+        try {
+            userMapper.outMoney(out, money);
+            int i = 1 / 0;
+            userMapper.inMoney(in, money);
+        } finally {
+            logService.transfer(out, in, money);
+        }
     }
 }
