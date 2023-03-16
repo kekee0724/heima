@@ -1,7 +1,6 @@
 package cn.bipark.reco.controller;
 
 import cn.bipark.reco.domain.User;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -20,40 +19,37 @@ import java.util.List;
  * http://localhost/users 修改用户信息 PUT(修改/更新)
  * http://localhost/users/1 删除用户信息 DELETE(删除)
  */
-@Controller
-//@RequestMapping("/users")
+//@Controller
+//@ResponseBody // 设置当前控制器返回值作为响应体
+@RestController // 等同于@Controller。与@ResponseBodyi两个注解组合功能
+@RequestMapping("/users")
 public class UserController {
 
-    @PostMapping("/users")
-    @ResponseBody
-    public String save() {
-        System.out.println("user save...");
+    @PostMapping
+    public String save(@RequestBody User user) {
+        System.out.println("user save..." + user);
         return "{'module':'user save'}";
     }
 
-    @DeleteMapping("/users/{id}")
-    @ResponseBody
-    public String delete(@PathVariable Integer id) {
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable Long id) {
         System.out.println("user delete..." + id);
         return "{'module':'user delete'}";
     }
 
-    @PutMapping("/users")
-    @ResponseBody
-    public String update() {
-        System.out.println("user update...");
+    @PutMapping
+    public String update(@RequestBody User user) {
+        System.out.println("user update..." + user);
         return "{'module':'user update'}";
     }
 
-    @GetMapping("/users/{id}")
-    @ResponseBody
-    public String getById(@PathVariable Integer id) {
+    @GetMapping("/{id}")
+    public String getById(@PathVariable Long id) {
         System.out.println("user getById..." + id);
         return "{'module':'user getById'}";
     }
 
-    @GetMapping("/users")
-    @ResponseBody
+    @GetMapping
     public String getAll() {
         System.out.println("user getAll...");
         return "{'module':'user getAll'}";
@@ -68,14 +64,12 @@ public class UserController {
 
     //响应文本数据
     @RequestMapping("/toText")
-    @ResponseBody
     public String toText() {
         System.out.println("返回纯文本数据");
         return "response text";
     }
 
     @RequestMapping("/toJsonPojo")
-    @ResponseBody
     public User toJsonPojo() {
         System.out.println("返回json对象数据");
         User user = new User();
@@ -93,7 +87,6 @@ public class UserController {
      * @return
      */
     @RequestMapping("/toJsonList")
-    @ResponseBody
     public List<User> toJsonList() {
         System.out.println("返回json集合数据");
         User user1 = new User();
