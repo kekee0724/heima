@@ -27,32 +27,34 @@ public class UserController {
 
     @PostMapping
     public String save(@RequestBody User user) {
-        System.out.println("user save..." + user);
-        return "{'module':'user save'}";
+        System.out.println("user save is running..." + user);
+        return "{'module':'user save success'}";
     }
 
     @DeleteMapping("/{id}")
     public String delete(@PathVariable Long id) {
-        System.out.println("user delete..." + id);
-        return "{'module':'user delete'}";
+        System.out.println("user delete is running..." + id);
+        return "{'module':'user delete success'}";
     }
 
     @PutMapping
     public String update(@RequestBody User user) {
-        System.out.println("user update..." + user);
-        return "{'module':'user update'}";
+        System.out.println("user update is running..." + user);
+        return "{'module':'user update success'}";
     }
 
     @GetMapping("/{id}")
-    public String getById(@PathVariable Long id) {
-        System.out.println("user getById..." + id);
-        return "{'module':'user getById'}";
+    public User getById(@PathVariable Long id) {
+        System.out.println("user getById is running..." + id);
+//        return "{'module':'user getById'}";
+        return getUsers().get(0);
     }
 
     @GetMapping
-    public String getAll() {
-        System.out.println("user getAll...");
-        return "{'module':'user getAll'}";
+    public List<User> getAll() {
+        System.out.println("user getAll is running...");
+//        return "{'module':'user getAll'}";
+        return getUsers();
     }
 
     //响应页面/跳转页面
@@ -89,6 +91,10 @@ public class UserController {
     @RequestMapping("/toJsonList")
     public List<User> toJsonList() {
         System.out.println("返回json集合数据");
+        return getUsers();
+    }
+
+    private List<User> getUsers() {
         User user1 = new User();
         user1.setUsername("可可");
         user1.setPassword("0724");

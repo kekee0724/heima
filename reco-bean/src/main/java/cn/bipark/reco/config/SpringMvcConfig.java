@@ -2,10 +2,12 @@ package cn.bipark.reco.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @Configuration
-@ComponentScan("cn.bipark.reco.controller")
+@ComponentScan({"cn.bipark.reco.controller", "cn.bipark.reco.config"})
 @EnableWebMvc
+//@Import(SpringMvcSupportConfig.class)
 public class SpringMvcConfig {
 }

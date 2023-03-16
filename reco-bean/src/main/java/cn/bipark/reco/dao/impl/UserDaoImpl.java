@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-@Repository
+//@Repository
 //@Scope("prototype")
 @Deprecated
 public class UserDaoImpl implements UserDao {
