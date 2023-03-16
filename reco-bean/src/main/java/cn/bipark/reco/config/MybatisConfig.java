@@ -18,7 +18,7 @@ public class MybatisConfig {
     @Bean
     public MapperScannerConfigurer mapperScannerConfigurer(){
         MapperScannerConfigurer msc = new MapperScannerConfigurer();
-        msc.setBasePackage("cn.bipark.reco.mapper");
+        msc.setBasePackage("cn.bipark.reco.dao");
         return msc;
     }
 }

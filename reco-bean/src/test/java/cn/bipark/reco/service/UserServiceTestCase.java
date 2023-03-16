@@ -1,6 +1,5 @@
 package cn.bipark.reco.service;
 
-import cn.bipark.reco.Application;
 import cn.bipark.reco.config.SpringConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,11 +15,11 @@ public class UserServiceTestCase {
 
     @Test
     public void TestFindAll() {
-        System.out.println(userService.findAll());
+        System.out.println(userService.getAll());
     }
 
     @Test
     public void TestFindById() {
-        System.out.println(userService.findById(1L));
+        System.out.println(userService.getById(1L));
     }
 }

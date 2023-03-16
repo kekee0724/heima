@@ -1,7 +1,7 @@
 package cn.bipark.reco.service.impl;
 
 import cn.bipark.reco.domain.User;
-import cn.bipark.reco.mapper.UserMapper;
+import cn.bipark.reco.dao.UserDao;
 import cn.bipark.reco.service.LogService;
 import cn.bipark.reco.service.UserService;
 import org.springframework.beans.factory.DisposableBean;
@@ -25,8 +25,10 @@ public class UserServiceImpl implements UserService, InitializingBean, Disposabl
     }*/
 
     @Autowired
-    private UserMapper userMapper;
+    private UserDao userDao;
 
+    @Autowired
+    private LogService logService;
     public UserServiceImpl() {
         System.out.println("初始化了");
     }
@@ -37,38 +39,31 @@ public class UserServiceImpl implements UserService, InitializingBean, Disposabl
     }*/
 
     @Override
-    public void destroy() throws Exception {
-        System.out.println("userService destroy...");
+    public boolean save(User user) {
+        userDao.save(user);
+        return true;
     }
 
     @Override
-    public void afterPropertiesSet() throws Exception {
-        System.out.println("userService afterPropertiesSet init...");
+    public boolean update(User user) {
+        userDao.update(user);
+        return true;
     }
 
     @Override
-    public void save(User user) {
-
+    public boolean delete(Long id) {
+        userDao.delete(id);
+        return true;
     }
 
     @Override
-    public void delete(Long id) {
-
+    public User getById(Long id) {
+        return userDao.getById(id);
     }
 
     @Override
-    public void update(User user) {
-
-    }
-
-    @Override
-    public List<User> findAll() {
-        return userMapper.findAll();
-    }
-
-    @Override
-    public User findById(Long id) {
-        return userMapper.findById(id);
+    public List<User> getAll() {
+        return userDao.getAll();
     }
 
     @Override
@@ -76,17 +71,24 @@ public class UserServiceImpl implements UserService, InitializingBean, Disposabl
         return "root".equals(password);
     }
 
-    @Autowired
-    private LogService logService;
-
     @Override
     public void transfer(String out, String in, Double money) {
         try {
-            userMapper.outMoney(out, money);
+            userDao.outMoney(out, money);
             int i = 1 / 0;
-            userMapper.inMoney(in, money);
+            userDao.inMoney(in, money);
         } finally {
             logService.transfer(out, in, money);
         }
+    }
+
+    @Override
+    public void destroy() throws Exception {
+        System.out.println("userService destroy...");
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("userService afterPropertiesSet init...");
     }
 }

@@ -6,15 +6,39 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 public interface UserService {
-    void save(User user);
+    /**
+     * 保存
+     * @param user
+     * @return
+     */
+    boolean save(User user);
 
-    void delete(Long id);
+    /**
+     * 修改
+     * @param user
+     * @return
+     */
+    boolean  update(User user);
 
-    void update(User user);
+    /**
+     * 根据id删除
+     * @param id
+     * @return
+     */
+    boolean delete(Long id);
 
-    List<User> findAll();
+    /**
+     * 根据id查询
+     * @param id
+     * @return
+     */
+    User getById(Long id);
 
-    User findById(Long id);
+    /**
+     * 查询全部
+     * @return
+     */
+    List<User> getAll();
 
     boolean openURL(String url, String password);
 
