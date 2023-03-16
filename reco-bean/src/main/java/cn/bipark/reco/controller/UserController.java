@@ -1,6 +1,8 @@
 package cn.bipark.reco.controller;
 
 import cn.bipark.reco.domain.User;
+import cn.bipark.reco.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -25,36 +27,37 @@ import java.util.List;
 @RequestMapping("/users")
 public class UserController {
 
+    @Autowired
+    private UserService userService;
+
     @PostMapping
-    public String save(@RequestBody User user) {
+    public boolean save(@RequestBody User user) {
         System.out.println("user save is running..." + user);
-        return "{'module':'user save success'}";
+        return userService.save(user);
     }
 
     @DeleteMapping("/{id}")
-    public String delete(@PathVariable Long id) {
+    public boolean delete(@PathVariable Long id) {
         System.out.println("user delete is running..." + id);
-        return "{'module':'user delete success'}";
+        return userService.delete(id);
     }
 
     @PutMapping
-    public String update(@RequestBody User user) {
+    public boolean update(@RequestBody User user) {
         System.out.println("user update is running..." + user);
-        return "{'module':'user update success'}";
+        return userService.update(user);
     }
 
     @GetMapping("/{id}")
     public User getById(@PathVariable Long id) {
         System.out.println("user getById is running..." + id);
-//        return "{'module':'user getById'}";
-        return getUsers().get(0);
+        return userService.getById(id);
     }
 
     @GetMapping
     public List<User> getAll() {
         System.out.println("user getAll is running...");
-//        return "{'module':'user getAll'}";
-        return getUsers();
+        return userService.getAll();
     }
 
     //响应页面/跳转页面
@@ -91,21 +94,6 @@ public class UserController {
     @RequestMapping("/toJsonList")
     public List<User> toJsonList() {
         System.out.println("返回json集合数据");
-        return getUsers();
-    }
-
-    private List<User> getUsers() {
-        User user1 = new User();
-        user1.setUsername("可可");
-        user1.setPassword("0724");
-
-        User user2 = new User();
-        user2.setUsername("乐乐");
-        user2.setPassword("0520");
-
-        ArrayList<User> userList = new ArrayList<>();
-        userList.add(user1);
-        userList.add(user2);
-        return userList;
+        return userService.getAll();
     }
 }
