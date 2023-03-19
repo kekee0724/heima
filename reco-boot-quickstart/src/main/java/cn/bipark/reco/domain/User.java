@@ -1,9 +1,6 @@
 package cn.bipark.reco.domain;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -19,13 +16,13 @@ public class User {
      * 外卖单：关联地区日期等信息（1004202003143491)
      * 关系表：可省略id
      * ...
-     *
+     * <p>
      * AUTO(O)：使用数据库id自增策略控制id生成
      * NONE(1)：不设置id生成策略
      * INPUT(2)：用户手工输入id
-     * ASSIGN_ID(3)：雪花算法生成id（可兼容数值型与字符串型)
+     * ASSIGN_ID(3)：雪花算法生成id（可兼容数 值型与字符串型)
      * ASSIGN_UUID(4)：以UUID生成算法作为id生成策略
-     *
+     * <p>
      * id       db_column: id
      */
     @TableId(type = IdType.AUTO)
@@ -68,4 +65,8 @@ public class User {
      */
     @TableField(exist = false)
     private Integer online;
+
+    // 逻辑删除字段，标记当前记录是否被删除
+    @TableLogic(value = "0", delval = "1")
+    private Boolean deleted;
 }

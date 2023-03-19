@@ -43,7 +43,7 @@ public class RecoQuickstartApplicationTests {
 
     @Test
     void testDeleteById() {
-        userDao.deleteById(1637430792105078785L);
+        /*userDao.deleteById(1637430792105078785L);*/
         ArrayList<Long> list = new ArrayList<>();
         Collections.addAll(list, 4L, 5L);
         userDao.deleteBatchIds(list);
