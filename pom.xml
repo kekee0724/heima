@@ -36,6 +36,7 @@
         <module>r2023-upms-web</module>
         <module>reco-boot</module>
         <module>reco-bean</module>
+        <module>reco-boot-quickstart</module>
     </modules>
 
     <dependencyManagement>
