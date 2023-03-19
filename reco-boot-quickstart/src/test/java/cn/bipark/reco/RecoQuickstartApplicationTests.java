@@ -17,7 +17,7 @@ public class RecoQuickstartApplicationTests {
 
     @Test
     void contextLoads() {
-        userService.save();
+        userService.getById(1L);
     }
 
     @Test
