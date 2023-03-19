@@ -37,6 +37,7 @@
         <module>reco-boot</module>
         <module>reco-bean</module>
         <module>reco-boot-quickstart</module>
+        <module>reco-generator</module>
     </modules>
 
     <dependencyManagement>
