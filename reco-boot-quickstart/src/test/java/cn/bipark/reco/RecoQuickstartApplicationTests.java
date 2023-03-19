@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @SpringBootTest
@@ -92,9 +93,12 @@ public class RecoQuickstartApplicationTests {
         System.out.println(userList);*/
 
         //方式三:Lambda格式按条件查询
+        BigDecimal money = BigDecimal.valueOf(10);
         LambdaQueryWrapper<User> lqw = new LambdaQueryWrapper<>();
         /*lqw.lt(User::getMoney, 30).gt(User::getMoney, 10);*/
-        lqw.lt(User::getMoney, 10).or().gt(User::getMoney, 30);
+        lqw.lt(null != money, User::getMoney, 10)
+                .or()
+                .gt(null != money, User::getMoney, 30);
         List<User> userList = userDao.selectList(lqw);
         System.out.println(userList);
     }
