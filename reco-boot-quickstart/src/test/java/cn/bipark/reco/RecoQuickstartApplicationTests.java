@@ -51,11 +51,16 @@ public class RecoQuickstartApplicationTests {
 
     @Test
     void testUpdateById() {
-        User user = new User();
-        user.setId(1L);
-        user.setNick("Tom666");
-        user.setPassword("tom888");
-        userDao.updateById(user);
+        //1.先通过要修改的数据d将当前数据查询出来
+        User user = userDao.selectById(3L); //version=3
+        User user2 =userDao.selectById(3L); //version=3
+        //2.将要修改的属性逐一设置进去
+
+        user2.setNick("Jock999");
+        userDao.updateById(user2); //version=>4
+
+        user.setNick("Jock669");
+        userDao.updateById(user); ///version =3？条件还成立吗？
     }
 
     @Test
