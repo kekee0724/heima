@@ -35,7 +35,6 @@
         <module>r2023-upms-domain</module>
         <module>r2023-upms-web</module>
         <module>reco-boot</module>
-        <module>springfox-boot-starter</module>
         <module>reco-bean</module>
     </modules>
 
@@ -96,4 +95,16 @@
             </plugin>
         </plugins>
     </build>
+
+    <!--配置当前工程保存在私服中的具体位置-->
+    <!--<distributionManagement>
+        <repository>
+            <id>maven-releases</id>
+            <url>http://localhost:8081/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>maven-snapshots</id>
+            <url>http://localhost:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>-->
 </project>
