@@ -13,6 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
 
 @SpringBootTest
 public class RecoQuickstartApplicationTests {
@@ -81,25 +82,35 @@ public class RecoQuickstartApplicationTests {
     @Test
     void testGetAll() {
         //按条件查询
-        /*QueryWrapper qw = new QueryWrapper();
-        qw.lt("money",18);
-        List<User> userList = userDao.selectList(qw);
-        System.out.println(userList);*/
+        QueryWrapper qw1 = new QueryWrapper();
+        qw1.lt("money", 18);
+        List<User> userList1 = userDao.selectList(qw1);
+        System.out.println(userList1);
 
-        //方式二：Lambda格式按条件查询
-        /*QueryWrapper<User> qw = new QueryWrapper();
-        qw.lambda().lt(User::getMoney, 18);
-        List<User> userList = userDao.selectList(qw);
-        System.out.println(userList);*/
+        // 方式二：Lambda格式按条件查询
+        QueryWrapper<User> qw2 = new QueryWrapper();
+        // 查询投影: 查询结果包含模型类中部分属性
+        qw2.select("id", "nick", "money", "password");
+        qw2.lambda().lt(User::getMoney, 18);
+        List<User> userList2 = userDao.selectList(qw2);
+        System.out.println(userList2);
 
-        //方式三:Lambda格式按条件查询
+        // 方式三:Lambda格式按条件查询
         BigDecimal money = BigDecimal.valueOf(10);
-        LambdaQueryWrapper<User> lqw = new LambdaQueryWrapper<>();
-        /*lqw.lt(User::getMoney, 30).gt(User::getMoney, 10);*/
-        lqw.lt(null != money, User::getMoney, 10)
+        LambdaQueryWrapper<User> lqw1 = new LambdaQueryWrapper<>();
+        // 查询投影: 查询结果包含模型类中部分属性
+        lqw1.select(User::getId, User::getNick, User::getMoney);
+        lqw1.lt(null != money, User::getMoney, 10)
                 .or()
                 .gt(null != money, User::getMoney, 30);
-        List<User> userList = userDao.selectList(lqw);
-        System.out.println(userList);
+        List<User> userList3 = userDao.selectList(lqw1);
+        System.out.println(userList3);
+
+        QueryWrapper<User> lqw = new QueryWrapper<>();
+        // 查询投影: 查询结果包含模型类中未定义的属性
+        lqw.select("count(*)as count,team");
+        lqw.groupBy("team");
+        List<Map<String, Object>> userMaps = userDao.selectMaps(lqw);
+        System.out.println(userMaps);
     }
 }
