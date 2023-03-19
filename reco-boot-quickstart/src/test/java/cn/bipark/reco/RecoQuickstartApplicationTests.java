@@ -3,11 +3,15 @@ package cn.bipark.reco;
 import cn.bipark.reco.dao.UserDao;
 import cn.bipark.reco.domain.User;
 import cn.bipark.reco.service.UserService;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.List;
 
 @SpringBootTest
 public class RecoQuickstartApplicationTests {
@@ -71,5 +75,27 @@ public class RecoQuickstartApplicationTests {
         System.out.println("一共多少页:" + page.getPages());
         System.out.println("一共多少条数据:" + page.getTotal());
         System.out.println("数据:" + page.getRecords());
+    }
+
+    @Test
+    void testGetAll() {
+        //按条件查询
+        /*QueryWrapper qw = new QueryWrapper();
+        qw.lt("money",18);
+        List<User> userList = userDao.selectList(qw);
+        System.out.println(userList);*/
+
+        //方式二：Lambda格式按条件查询
+        /*QueryWrapper<User> qw = new QueryWrapper();
+        qw.lambda().lt(User::getMoney, 18);
+        List<User> userList = userDao.selectList(qw);
+        System.out.println(userList);*/
+
+        //方式三:Lambda格式按条件查询
+        LambdaQueryWrapper<User> lqw = new LambdaQueryWrapper<>();
+        /*lqw.lt(User::getMoney, 30).gt(User::getMoney, 10);*/
+        lqw.lt(User::getMoney, 10).or().gt(User::getMoney, 30);
+        List<User> userList = userDao.selectList(lqw);
+        System.out.println(userList);
     }
 }

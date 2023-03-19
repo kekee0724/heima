@@ -3,15 +3,15 @@
 
  Source Server         : localhost_3306
  Source Server Type    : MySQL
- Source Server Version : 80029 (8.0.29)
+ Source Server Version : 80032 (8.0.32)
  Source Host           : localhost:3306
  Source Schema         : reco_upms
 
  Target Server Type    : MySQL
- Target Server Version : 80029 (8.0.29)
+ Target Server Version : 80032 (8.0.32)
  File Encoding         : 65001
 
- Date: 12/03/2023 13:14:43
+ Date: 19/03/2023 22:41:26
 */
 
 SET NAMES utf8mb4;
@@ -31,7 +31,7 @@ CREATE TABLE `bi_level` (
   `retain_time` bigint DEFAULT NULL COMMENT '挑战时间',
   `is_current` tinyint NOT NULL DEFAULT '0' COMMENT '是否为当前关卡',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='等级';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC COMMENT='等级';
 
 -- ----------------------------
 -- Records of bi_level
@@ -41,6 +41,23 @@ INSERT INTO `bi_level` (`id`, `title`, `content`, `cover`, `start_time`, `end_ti
 INSERT INTO `bi_level` (`id`, `title`, `content`, `cover`, `start_time`, `end_time`, `retain_time`, `is_current`) VALUES (2, '第二关  Spring天地', NULL, 'assets/covers/2.jpg', '2021-05-25 00:00:00', '2023-08-13 23:59:59', 360, 0);
 INSERT INTO `bi_level` (`id`, `title`, `content`, `cover`, `start_time`, `end_time`, `retain_time`, `is_current`) VALUES (3, '第三关  Vue的前世今生', NULL, 'assets/covers/3.jpg', '2021-05-25 00:00:00', '2023-07-25 23:59:59', 360, 0);
 INSERT INTO `bi_level` (`id`, `title`, `content`, `cover`, `start_time`, `end_time`, `retain_time`, `is_current`) VALUES (4, '第四关  云的时代', NULL, 'assets/covers/4.jpg', '2021-05-25 00:00:00', '2023-07-25 23:59:59', 360, 0);
+COMMIT;
+
+-- ----------------------------
+-- Table structure for bi_log
+-- ----------------------------
+DROP TABLE IF EXISTS `bi_log`;
+CREATE TABLE `bi_log` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `info` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '信息',
+  `crete_date` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- ----------------------------
+-- Records of bi_log
+-- ----------------------------
+BEGIN;
 COMMIT;
 
 -- ----------------------------
@@ -55,7 +72,7 @@ CREATE TABLE `bi_question` (
   `options` text COMMENT '选项 JSON存储',
   `score` int unsigned DEFAULT '0' COMMENT '分值',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=989 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='题目';
+) ENGINE=InnoDB AUTO_INCREMENT=989 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC COMMENT='题目';
 
 -- ----------------------------
 -- Records of bi_question
@@ -1060,7 +1077,7 @@ CREATE TABLE `bi_question_level` (
   `question_id` bigint NOT NULL COMMENT '问题id',
   `level_id` bigint NOT NULL COMMENT '关卡id',
   PRIMARY KEY (`id`,`question_id`,`level_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=989 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='题目等级';
+) ENGINE=InnoDB AUTO_INCREMENT=989 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC COMMENT='题目等级';
 
 -- ----------------------------
 -- Records of bi_question_level
@@ -2078,7 +2095,7 @@ CREATE TABLE `bi_record` (
   `gmt_update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `gmt_update` varchar(255) DEFAULT NULL COMMENT '更新人',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='答题记录';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC COMMENT='答题记录';
 
 -- ----------------------------
 -- Records of bi_record
@@ -2100,7 +2117,7 @@ CREATE TABLE `bi_system_param` (
   `gmt_update` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT '修改人',
   `gmt_create_time` datetime DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统参数';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC COMMENT='系统参数';
 
 -- ----------------------------
 -- Records of bi_system_param
@@ -2118,7 +2135,7 @@ CREATE TABLE `bi_team` (
   `team_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT '团队名',
   `team_org` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT '团队机构',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='团队';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC COMMENT='团队';
 
 -- ----------------------------
 -- Records of bi_team
@@ -2146,7 +2163,7 @@ CREATE TABLE `bi_team_rank` (
   `rank_num` int NOT NULL DEFAULT '0' COMMENT '排名数',
   `is_out` int DEFAULT '0' COMMENT '是否已被淘汰 0-正常， 1-被淘汰',
   PRIMARY KEY (`id`,`participants`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='团队排行榜';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC COMMENT='团队排行榜';
 
 -- ----------------------------
 -- Records of bi_team_rank
@@ -2166,15 +2183,16 @@ CREATE TABLE `bi_user` (
   `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT '' COMMENT '邮箱',
   `phone` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT '' COMMENT '手机',
   `team` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT '团队',
+  `money` decimal(10,2) DEFAULT NULL COMMENT '余额',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='用户';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC COMMENT='用户';
 
 -- ----------------------------
 -- Records of bi_user
 -- ----------------------------
 BEGIN;
-INSERT INTO `bi_user` (`id`, `username`, `password`, `nick`, `email`, `phone`, `team`) VALUES (1, 'shinelymi', '01256ac09b16475d26e941bb64d21c5d', 'meshine', '', '', '1');
-INSERT INTO `bi_user` (`id`, `username`, `password`, `nick`, `email`, `phone`, `team`) VALUES (2, 'admin', 'f5252bb1fdacf77141ec16cbdc051815', '可可', '', '', '1');
+INSERT INTO `bi_user` (`id`, `username`, `password`, `nick`, `email`, `phone`, `team`, `money`) VALUES (1, 'shinelymi', '01256ac09b16475d26e941bb64d21c5d', 'meshine', '', '', '1', 16.00);
+INSERT INTO `bi_user` (`id`, `username`, `password`, `nick`, `email`, `phone`, `team`, `money`) VALUES (2, 'admin', 'f5252bb1fdacf77141ec16cbdc051815', '可可', '', '', '1', 20.00);
 COMMIT;
 
 -- ----------------------------
@@ -2187,7 +2205,7 @@ CREATE TABLE `bi_user_level` (
   `level_id` bigint DEFAULT NULL COMMENT '关卡id',
   `questions` text COMMENT '问题id集合',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='用户等级';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC COMMENT='用户等级';
 
 -- ----------------------------
 -- Records of bi_user_level
@@ -2206,7 +2224,7 @@ CREATE TABLE `bi_user_position` (
   `lat` varchar(255) DEFAULT NULL COMMENT '纬度',
   `lng` varchar(255) DEFAULT NULL COMMENT '经度',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='用户定位';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC COMMENT='用户定位';
 
 -- ----------------------------
 -- Records of bi_user_position
@@ -2227,7 +2245,7 @@ CREATE TABLE `bi_user_rank` (
   `team_id` bigint NOT NULL COMMENT '团队id',
   `rank_num` int NOT NULL DEFAULT '0' COMMENT '排名数',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='个人排行榜';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC COMMENT='个人排行榜';
 
 -- ----------------------------
 -- Records of bi_user_rank

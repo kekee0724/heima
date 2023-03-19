@@ -3,6 +3,8 @@ package cn.bipark.reco.domain;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
+import java.math.BigDecimal;
+
 @Data
 @TableName("bi_user")
 public class User {
@@ -35,5 +37,10 @@ public class User {
      * 团队       db_column: team
      */
     private String team;
+    //columns END
+    /**
+     * 余额       db_column: money
+     */
+    private BigDecimal money;
     //columns END
 }
