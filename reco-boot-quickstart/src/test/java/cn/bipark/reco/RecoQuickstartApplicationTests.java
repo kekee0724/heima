@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -42,6 +44,9 @@ public class RecoQuickstartApplicationTests {
     @Test
     void testDeleteById() {
         userDao.deleteById(1637430792105078785L);
+        ArrayList<Long> list = new ArrayList<>();
+        Collections.addAll(list, 4L, 5L);
+        userDao.deleteBatchIds(list);
     }
 
     @Test
@@ -56,6 +61,9 @@ public class RecoQuickstartApplicationTests {
     @Test
     void testSelectById() {
         System.out.println(userDao.selectById(1L));
+        ArrayList<Long> list = new ArrayList<>();
+        Collections.addAll(list, 4L, 5L);
+        userDao.selectBatchIds(list);
     }
 
     @Test
@@ -104,9 +112,9 @@ public class RecoQuickstartApplicationTests {
                 .or()
                 .gt(null != money, User::getMoney, 30);*/
         //范围查询lt le gt ge eq between
-        lqw1.between(User::getMoney,10, 30);
+        lqw1.between(User::getMoney, 10, 30);
         //模糊匹配Like
-        lqw1.like(User::getUsername,"mi");
+        lqw1.like(User::getUsername, "mi");
 
         List<User> userList3 = userDao.selectList(lqw1);
         System.out.println(userList3);
