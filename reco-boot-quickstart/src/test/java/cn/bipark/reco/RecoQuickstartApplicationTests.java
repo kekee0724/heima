@@ -100,17 +100,29 @@ public class RecoQuickstartApplicationTests {
         LambdaQueryWrapper<User> lqw1 = new LambdaQueryWrapper<>();
         // 查询投影: 查询结果包含模型类中部分属性
         lqw1.select(User::getId, User::getNick, User::getMoney);
-        lqw1.lt(null != money, User::getMoney, 10)
+        /*lqw1.lt(null != money, User::getMoney, 10)
                 .or()
-                .gt(null != money, User::getMoney, 30);
+                .gt(null != money, User::getMoney, 30);*/
+        //范围查询lt le gt ge eq between
+        lqw1.between(User::getMoney,10, 30);
+        //模糊匹配Like
+        lqw1.like(User::getUsername,"mi");
+
         List<User> userList3 = userDao.selectList(lqw1);
         System.out.println(userList3);
 
-        QueryWrapper<User> lqw = new QueryWrapper<>();
+        QueryWrapper<User> lqw2 = new QueryWrapper<>();
         // 查询投影: 查询结果包含模型类中未定义的属性
-        lqw.select("count(*)as count,team");
-        lqw.groupBy("team");
-        List<Map<String, Object>> userMaps = userDao.selectMaps(lqw);
+        lqw2.select("count(*)as count,team");
+        lqw2.groupBy("team");
+        List<Map<String, Object>> userMaps = userDao.selectMaps(lqw2);
         System.out.println(userMaps);
+
+        //条件查询
+        LambdaQueryWrapper<User> lqw3 = new LambdaQueryWrapper<>();
+        //等同于=
+        lqw3.eq(User::getUsername, "Jerry").eq(User::getPassword, "jerry");
+        User loginUser = userDao.selectOne(lqw3);
+        System.out.println(loginUser);
     }
 }
