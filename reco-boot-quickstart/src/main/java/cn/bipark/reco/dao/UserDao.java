@@ -1,12 +1,14 @@
 package cn.bipark.reco.dao;
 
 import cn.bipark.reco.domain.User;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
 @Mapper
-public interface UserDao {
+public interface UserDao extends BaseMapper<User> {
 
     @Insert("insert into bi_user (username, password) values(#{username}, #{password})")
     void save(User user);
