@@ -5,7 +5,7 @@
  Source Server Type    : MySQL
  Source Server Version : 80032 (8.0.32)
  Source Host           : localhost:3306
- Source Schema         : reco_upms
+ Source Schema         : reco_mini
 
  Target Server Type    : MySQL
  Target Server Version : 80032 (8.0.32)

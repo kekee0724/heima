@@ -10,7 +10,7 @@ public class Generator {
     public static void main(String[] args) {
         // 0.放置数据库相置
         DataSourceConfig dataSourceConfig = new DataSourceConfig
-                .Builder("jdbc:mysql://localhost:3306/reco_upms?serverTimezone=UTC", "kekee", "0724")
+                .Builder("jdbc:mysql://localhost:3306/reco_mini?serverTimezone=UTC", "kekee", "0724")
                 .build();
         // 1.获取代码生成器的对象
         AutoGenerator autoGenerator = new AutoGenerator(dataSourceConfig);
