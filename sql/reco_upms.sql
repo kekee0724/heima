@@ -11,7 +11,7 @@
  Target Server Version : 80032 (8.0.32)
  File Encoding         : 65001
 
- Date: 19/03/2023 22:41:26
+ Date: 20/03/2023 21:34:18
 */
 
 SET NAMES utf8mb4;
@@ -2184,15 +2184,21 @@ CREATE TABLE `bi_user` (
   `phone` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT '' COMMENT '手机',
   `team` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT '团队',
   `money` decimal(10,2) DEFAULT NULL COMMENT '余额',
+  `deleted` bit(1) DEFAULT b'0' COMMENT '删除',
+  `version` int DEFAULT '1',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC COMMENT='用户';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC COMMENT='用户';
 
 -- ----------------------------
 -- Records of bi_user
 -- ----------------------------
 BEGIN;
-INSERT INTO `bi_user` (`id`, `username`, `password`, `nick`, `email`, `phone`, `team`, `money`) VALUES (1, 'shinelymi', '01256ac09b16475d26e941bb64d21c5d', 'meshine', '', '', '1', 16.00);
-INSERT INTO `bi_user` (`id`, `username`, `password`, `nick`, `email`, `phone`, `team`, `money`) VALUES (2, 'admin', 'f5252bb1fdacf77141ec16cbdc051815', '可可', '', '', '1', 20.00);
+INSERT INTO `bi_user` (`id`, `username`, `password`, `nick`, `email`, `phone`, `team`, `money`, `deleted`, `version`) VALUES (1, 'shinelymi', '01256ac09b16475d26e941bb64d21c5d', 'meshine', '', '', '1', 16.00, b'0', 1);
+INSERT INTO `bi_user` (`id`, `username`, `password`, `nick`, `email`, `phone`, `team`, `money`, `deleted`, `version`) VALUES (2, 'admin', 'f5252bb1fdacf77141ec16cbdc051815', '可可', '', '', '1', 20.00, b'0', 1);
+INSERT INTO `bi_user` (`id`, `username`, `password`, `nick`, `email`, `phone`, `team`, `money`, `deleted`, `version`) VALUES (3, 'Jerry', 'jerry888', 'Jock999', '', '', '2', 60.00, b'0', 4);
+INSERT INTO `bi_user` (`id`, `username`, `password`, `nick`, `email`, `phone`, `team`, `money`, `deleted`, `version`) VALUES (4, '', 'itheima', '黑马程序员', '', '4006184000', '12', NULL, b'1', 1);
+INSERT INTO `bi_user` (`id`, `username`, `password`, `nick`, `email`, `phone`, `team`, `money`, `deleted`, `version`) VALUES (5, '', 'itheima', '黑马程序员', '', '4006184000', '12', NULL, b'1', 1);
+INSERT INTO `bi_user` (`id`, `username`, `password`, `nick`, `email`, `phone`, `team`, `money`, `deleted`, `version`) VALUES (6, '', 'itheima', '黑马程序员', '', '4006184000', '12', NULL, b'0', 1);
 COMMIT;
 
 -- ----------------------------
