@@ -38,6 +38,7 @@
         <module>reco-bean</module>
         <module>reco-boot-quickstart</module>
         <module>reco-generator</module>
+        <module>hm-dianping</module>
     </modules>
 
     <dependencyManagement>
