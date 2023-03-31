@@ -1,6 +1,7 @@
 package com.hmdp.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.hmdp.dto.Result;
@@ -120,7 +121,7 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements IB
         String key = BLOG_LIKED_KEY + id;
         Set<String> top5 = stringRedisTemplate.opsForZSet().range(key, 0, 4);
         // 2.解析出其中的用户id
-        if (top5 == null || top5.isEmpty()) {
+        if (CollectionUtil.isEmpty(top5)) {
             return Result.ok(Collections.emptyList());
         }
         List<Long> ids = top5.stream().map(Long::valueOf).collect(Collectors.toList());
