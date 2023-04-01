@@ -39,6 +39,14 @@
         <module>reco-boot-quickstart</module>
         <module>reco-generator</module>
         <module>hm-dianping</module>
+        <module>concurrent/case_java7</module>
+        <module>concurrent/case_java8</module>
+        <module>concurrent/case_monitor</module>
+        <module>concurrent/case_thirdpart</module>
+        <module>concurrent/case_tomcat</module>
+        <module>concurrent/jcstress_ordering</module>
+        <module>concurrent/jmh_eliminate_locks</module>
+        <module>concurrent/jmh_performance</module>
     </modules>
 
     <dependencyManagement>
