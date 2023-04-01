@@ -85,12 +85,39 @@ class HmDianPingApplicationTests {
             }*/
             List<RedisGeoCommands.GeoLocation<String>> locations = shops.stream()
                     .map((shop ->
-                            new RedisGeoCommands.GeoLocation<>(
-                                    shop.getId().toString(),
-                                    new Point(shop.getX(), shop.getY()))
+                                    new RedisGeoCommands.GeoLocation<>(
+                                            shop.getId().toString(),
+                                            new Point(shop.getX(), shop.getY()))
                             )
                     ).collect(Collectors.toList());
             stringRedisTemplate.opsForGeo().add(key, locations);
+        }
+    }
+
+
+    /**
+     * 实现UV统计
+     * 我们直接利用单元测试，向HyperLogLog中添加100万条数据，看看内存占用和统计效果如何：
+     * used_memory:14497616
+     */
+    @Test
+    void testHyperLogLog() {
+        // 准备数组，装用户数据
+        String[] users = new String[1000];
+        // 数组角标
+        int j = 0;
+        for (int i = 1; i <= 1000000; i++) {
+            // 赋值
+            users[j++] = "user_" + i;
+            // 每1000条发送一次
+            if(i % 1000 == 0){
+                j = 0;
+                //发送到Redis
+                stringRedisTemplate.opsForHyperLogLog().add("hll1", users);
+            }
+            // 统计数量
+            Long size = stringRedisTemplate.opsForHyperLogLog().size("hll1");
+            System.out.println("size = " + size);
         }
     }
 }
