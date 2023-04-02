@@ -47,6 +47,7 @@
         <module>concurrent/jcstress_ordering</module>
         <module>concurrent/jmh_eliminate_locks</module>
         <module>concurrent/jmh_performance</module>
+        <module>cloud-demo</module>
     </modules>
 
     <dependencyManagement>
