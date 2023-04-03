@@ -9,8 +9,8 @@ spring:
   cloud:
     nacos:
       discovery:
-        cluster-name: HZ # 配置集群名称，也就是机房位置，例如：HZ，杭州
-        namespace: d372ca01-716c-4262-98bc-5d33616df4b0
+        cluster-name: SH # 配置集群名称，也就是机房位置，例如：HZ，杭州
+#        namespace: d372ca01-716c-4262-98bc-5d33616df4b0
 mybatis:
   type-aliases-package: cn.itcast.user.pojo
   configuration:
