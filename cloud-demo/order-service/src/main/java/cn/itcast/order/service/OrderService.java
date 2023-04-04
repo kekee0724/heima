@@ -1,5 +1,6 @@
 package cn.itcast.order.service;
 
+import cn.itcast.order.clients.UserClient;
 import cn.itcast.order.mapper.OrderMapper;
 import cn.itcast.order.pojo.Order;
 import cn.itcast.order.pojo.User;
@@ -16,6 +17,20 @@ public class OrderService {
     private OrderMapper orderMapper;
 
     @Autowired
+    private UserClient userClient;
+
+    public Order queryOrderById(Long orderId) {
+        // 1.查询订单
+        Order order = orderMapper.findById(orderId);
+        // 2.用Feign远程调用
+        User user = userClient.findById(order.getUserId());
+        // 3.封装User
+        order.setUser(user);
+        // 4.返回
+        return order;
+    }
+
+    /*@Autowired
     private RestTemplate restTemplate;
 
     public Order queryOrderById(Long orderId) {
@@ -23,13 +38,13 @@ public class OrderService {
         Order order = orderMapper.findById(orderId);
         // 2.利用RestTemplate发起http请求，查询用户
         // 2.1.Url路径
-        String url = "http://userserver/user/" + order.getUserId();
+        String url = "http://userservice/user/" + order.getUserId();
         System.out.println(url);
-        // 2.2.发送郑ttp请求，实现远程调用
+        // 2.2.发送Http请求，实现远程调用
         User user = restTemplate.getForObject(url, User.class);
         // 3.封装User
         order.setUser(user);
         // 4.返回
         return order;
-    }
+    }*/
 }
