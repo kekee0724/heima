@@ -1,5 +1,6 @@
 package cn.itcast.order;
 
+import cn.itcast.order.config.DefaultFeignConfiguration;
 import com.netflix.loadbalancer.IRule;
 import com.netflix.loadbalancer.RandomRule;
 import org.mybatis.spring.annotation.MapperScan;
@@ -10,7 +11,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
-@EnableFeignClients
+@EnableFeignClients(defaultConfiguration = DefaultFeignConfiguration.class)
 @MapperScan("cn.itcast.order.mapper")
 @SpringBootApplication
 public class OrderApplication {
@@ -34,6 +35,7 @@ public class OrderApplication {
      * 通过定义IRule实现可以修改负载均衡规则，有两种方式：
      * 代码方式：在order-service中的OrderApplication类中，定义一个新的IRule
      * 配置文件方式：在order-service的application.yml文件中，添加新的配置也可以修改规则
+     *
      * @return
      */
     @Bean
