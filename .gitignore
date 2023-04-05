@@ -34,3 +34,5 @@ build/
 
 *.jar
 *.class
+
+**/mysql/
