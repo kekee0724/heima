@@ -1,5 +1,6 @@
 package cn.itcast.mq.listener;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.ExchangeTypes;
 import org.springframework.amqp.rabbit.annotation.Exchange;
 import org.springframework.amqp.rabbit.annotation.Queue;
@@ -11,6 +12,7 @@ import java.time.LocalTime;
 import java.util.Map;
 
 @Component
+@Slf4j
 public class SpringRabbitListener {
 
     // @RabbitListener(queues = "simple.queue")
@@ -20,13 +22,13 @@ public class SpringRabbitListener {
 
     @RabbitListener(queues = "simple.queue")
     public void listenWorkQueue1(String msg) throws InterruptedException {
-        System.out.println("消费者1接收到消息：【" + msg + "】" + LocalTime.now());
+        log.info("消费者1接收到消息：【" + msg + "】" + LocalTime.now());
         Thread.sleep(20);
     }
 
     @RabbitListener(queues = "simple.queue")
     public void listenWorkQueue2(String msg) throws InterruptedException {
-        System.err.println("消费者2........接收到消息：【" + msg + "】" + LocalTime.now());
+        log.error("消费者2........接收到消息：【" + msg + "】" + LocalTime.now());
         Thread.sleep(200);
     }
 
