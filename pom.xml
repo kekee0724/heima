@@ -48,6 +48,7 @@
         <module>concurrent/jmh_eliminate_locks</module>
         <module>concurrent/jmh_performance</module>
         <module>cloud-demo</module>
+        <module>mq-demo</module>
     </modules>
 
     <dependencyManagement>
