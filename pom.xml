@@ -50,6 +50,7 @@
         <module>cloud-demo</module>
         <module>mq-demo</module>
         <module>hotel-demo</module>
+        <module>hotel-admin</module>
     </modules>
 
     <dependencyManagement>
