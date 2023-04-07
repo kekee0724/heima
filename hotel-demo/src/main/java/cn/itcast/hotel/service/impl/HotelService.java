@@ -44,7 +44,7 @@ public class HotelService extends ServiceImpl<HotelMapper, Hotel> implements IHo
     public PageResult search(RequestParams params) {
         try {
             // 1.准备Request
-            SearchRequest request = new SearchRequest("hotel");
+            SearchRequest request = new SearchRequest("hotel"); // GET /hotel/_search
             // 2.准备请求参数
             // 2.1.query
             buildBasicQuery(params, request);
@@ -53,6 +53,23 @@ public class HotelService extends ServiceImpl<HotelMapper, Hotel> implements IHo
             int size = params.getSize();
             request.source().from((page - 1) * size).size(size);
             // 2.3.距离排序
+            // {
+            //  "query": {
+            //    "match_all": {}
+            //  },
+            //  "sort": [
+            //    {
+            //      "_geo_distance": {
+            //        "location": {
+            //          "lat": 31.210168,
+            //          "lon": 121.516128
+            //        },
+            //        "order": "asc",
+            //        "unit": "km"
+            //      }
+            //    }
+            //  ]
+            // }
             String location = params.getLocation();
             if (StringUtils.isNotBlank(location)) {
                 request.source().sort(SortBuilders
@@ -107,7 +124,29 @@ public class HotelService extends ServiceImpl<HotelMapper, Hotel> implements IHo
             boolQuery.filter(QueryBuilders.rangeQuery("price").gte(minPrice).lte(maxPrice));
         }
 
-        // 2.算分函数查询
+        // 2.算分函数查询GET /hotel/_search
+        // {
+        //  "query": {
+        //    "function_score": {
+        //      "query": {
+        //        "match": {
+        //          "all": "外滩"
+        //        }
+        //      },
+        //      "functions": [
+        //        {
+        //          "filter": {
+        //            "term": {
+        //              "isAD": true
+        //            }
+        //          },
+        //          "weight": 20
+        //        }
+        //      ],
+        //      "boost_mode": "sum"
+        //    }
+        //  }
+        // }
         FunctionScoreQueryBuilder functionScoreQuery = QueryBuilders.functionScoreQuery(
                 boolQuery, // 原始查询，boolQuery
                 new FunctionScoreQueryBuilder.FilterFunctionBuilder[]{ // function数组
