@@ -56,8 +56,20 @@ class HotelAggregationTest {
     @Test
     void testSuggest() throws IOException {
         // 1.准备请求
-        SearchRequest request = new SearchRequest("hotel");
+        SearchRequest request = new SearchRequest("hotel"); // GET /hotel/_search
         // 2.请求参数
+        // {
+        //  "suggest": {
+        //    "suggestions": {
+        //      "text": "h",
+        //      "completion": {
+        //        "field": "suggestion",
+        //        "skip_duplicates": true,
+        //        "size": 10
+        //      }
+        //    }
+        //  }
+        // }
         request.source().suggest(new SuggestBuilder()
                 .addSuggestion(
                         "hotelSuggest",
