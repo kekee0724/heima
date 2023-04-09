@@ -43,11 +43,11 @@ public class HotelDoc {
         this.suggestion.add(this.brand);
         this.suggestion.add(this.city);
         // 判断商圈是否包含/
-        if (this.business.contains("/")) {
+        if (this.business.contains("/") || this.business.contains("、")) {
             // 需要切割
-            String[] arr = this.business.split("/");
+            String[] arr = this.business.split("/|、");
             Collections.addAll(this.suggestion, arr);
-        }else{
+        } else {
             this.suggestion.add(this.business);
         }
 
