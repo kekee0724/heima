@@ -8,6 +8,7 @@ import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.search.aggregations.AggregationBuilders;
 import org.elasticsearch.search.aggregations.Aggregations;
+import org.elasticsearch.search.aggregations.PipelineAggregatorBuilders;
 import org.elasticsearch.search.aggregations.bucket.terms.Terms;
 import org.elasticsearch.search.suggest.Suggest;
 import org.elasticsearch.search.suggest.SuggestBuilder;
@@ -33,7 +34,28 @@ class HotelAggregationTest {
         // 2.请求参数
         // 2.1.size
         request.source().size(0);
-        // 2.2.聚合
+        // 2.2.聚合GET /hotel/_search
+        // {
+        //  "size": 0,
+        //  "aggs": {
+        //    "brandAgg": {
+        //      "terms": {
+        //        "field": "brand",
+        //        "size": 20,
+        //        "order": {
+        //          "scoreAgg.avg": "desc"
+        //        }
+        //      },
+        //      "aggs": {
+        //        "scoreAgg": {
+        //          "stats": {
+        //            "field": "score"
+        //          }
+        //        }
+        //      }
+        //    }
+        //  }
+        // }
         request.source().aggregation(
                 AggregationBuilders.terms("brandAgg").field("brand").size(20));
         // 3.发出请求
