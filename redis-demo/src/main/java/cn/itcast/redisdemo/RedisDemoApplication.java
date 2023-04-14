@@ -13,4 +13,8 @@ public class RedisDemoApplication {
         SpringApplication.run(RedisDemoApplication.class, args);
     }
 
+    @Bean
+    public LettuceClientConfigurationBuilderCustomizer clientConfigurationBuilderCustomizer(){
+        return clientConfigurationBuilder -> clientConfigurationBuilder.readFrom(ReadFrom.REPLICA_PREFERRED);
+    }
 }
