@@ -53,6 +53,7 @@
         <module>hotel-admin</module>
         <module>seata-demo</module>
         <module>redis-demo</module>
+        <module>item-service</module>
     </modules>
 
     <dependencyManagement>
