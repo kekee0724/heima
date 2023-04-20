@@ -54,6 +54,7 @@
         <module>seata-demo</module>
         <module>redis-demo</module>
         <module>item-service</module>
+        <module>mq-advanced-demo</module>
     </modules>
 
     <dependencyManagement>
