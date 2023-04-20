@@ -1,5 +1,5 @@
 // 设置后台服务地址
-axios.defaults.baseURL = "http://localhost:8081";
+axios.defaults.baseURL = "http://localhost:8181";
 axios.defaults.timeout = 3000;
 
 const util = {
