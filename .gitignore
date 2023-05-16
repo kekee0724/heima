@@ -36,3 +36,7 @@ build/
 *.class
 
 **/mysql/
+**/lib/
+**/out/
+*.log
+*.bin.gz
