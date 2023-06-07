@@ -56,6 +56,9 @@
         <module>item-service</module>
         <module>mq-advanced-demo</module>
         <module>jvm-demo</module>
+        <module>hm_design_patterns/design_patterns</module>
+        <module>hm_design_patterns/itheima_spring</module>
+        <module>hm_design_patterns/spring_demo</module>
     </modules>
 
     <dependencyManagement>
