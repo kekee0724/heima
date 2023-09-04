@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    <bean class="com.kekee.service.impl.UserServiceImpl" id="userService1">-->
+        <!--        <property name="userDao" ref="userDao"/>-->
+<!--    </bean>-->
+
+    <!--配置UserServiceImpl-->
+    <bean id="userService" name="service,aaa,bbb,ccc" class="com.kekee.service.impl.UserServiceImpl" scope="singleton"
+          lazy-init="true" init-method="init" destroy-method="destroy" autowire="byName">
+        <constructor-arg name="name" value="kekee"/>
+        <constructor-arg name="age" value="18"/>
+        <!--        <property name="userDao" ref="userDao"/>-->
+        <!--        <property name="stringList">-->
+        <!--            <list>-->
+        <!--                <value>aaa</value>-->
+        <!--                <value>aaa</value>-->
+        <!--                <value>bbb</value>-->
+        <!--                <value>ccc</value>-->
+        <!--            </list>-->
+        <!--        </property>-->
+        <!--        <property name="stringSet">-->
+        <!--            <set>-->
+        <!--                <value>AAA</value>-->
+        <!--                <value>AAA</value>-->
+        <!--                <value>BBB</value>-->
+        <!--                <value>CCC</value>-->
+        <!--            </set>-->
+        <!--        </property>-->
+        <!--        <property name="userDaoList">-->
+        <!--            <set>-->
+        <!--                &lt;!&ndash;                <bean class="com.kekee.dao.impl.UserDaoImpl"/>&ndash;&gt;-->
+        <!--                &lt;!&ndash;                <bean class="com.kekee.dao.impl.UserDaoImpl"/>&ndash;&gt;-->
+        <!--                &lt;!&ndash;                <bean class="com.kekee.dao.impl.UserDaoImpl"/>&ndash;&gt;-->
+        <!--                <ref bean="userDao"/>-->
+        <!--                <ref bean="userDao1"/>-->
+        <!--                <ref bean="userDao2"/>-->
+        <!--                <ref bean="userDao3"/>-->
+        <!--            </set>-->
+        <!--        </property>-->
+        <!--        <property name="userDaoMap">-->
+        <!--            <map>-->
+        <!--                <entry key="d1" value-ref="userDao1"/>-->
+        <!--                <entry key="d2" value-ref="userDao2"/>-->
+        <!--                <entry key="d3" value-ref="userDao3"/>-->
+        <!--            </map>-->
+        <!--        </property>-->
+        <!--        <property name="properties">-->
+        <!--            <props>-->
+        <!--                <prop key="p1">pp1</prop>-->
+        <!--                <prop key="p2">pp2</prop>-->
+        <!--            </props>-->
+        <!--        </property>-->
+    </bean>
+
+    <beans profile="dev">
+        <bean id="userService2" class="com.kekee.service.impl.UserServiceImpl"/>
+    </beans>
+
+    <beans profile="test">
+        <bean id="userDao4" class="com.kekee.dao.impl.UserDaoImpl"/>
+    </beans>
+
+</beans>

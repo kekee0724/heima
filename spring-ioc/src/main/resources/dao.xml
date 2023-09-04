@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <!--加载properties文件-->
+    <context:property-placeholder location="classpath*:jdbc.properties"/>
+
+    <!--配置数据源信息-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+    <!--配置SqlSessionFactoryBean,作用将SqlSessionFactory存储到spring容器-->
+    <bean class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!--MapperScannerConfigurer，作用扫描指定的包，产生Mapper对象存储到Spring容器-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.kekee.mapper"/>
+    </bean>
+
+    <bean id="userService" name="service,aaa,bbb,ccc" class="com.kekee.service.impl.UserServiceImpl">
+        <constructor-arg name="name" value="kekee"/>
+        <constructor-arg name="age" value="18"/>
+        <property name="properties">
+            <props>
+                <prop key="p1">pp1</prop>
+                <prop key="p2">pp2</prop>
+            </props>
+        </property>
+        <property name="userDao" ref="userDao"/>
+        <property name="userMapper" ref="userMapper"/>
+    </bean>
+
+    <!--配置UserDaoImpl-->
+    <bean id="userDao" class="com.kekee.dao.impl.UserDaoImpl">
+        <!--        <property name="userService" ref="userService"/>-->
+    </bean>
+    <!--    <bean id="userDao1" class="com.kekee.factory.MyBeanFactory1" factory-method="userDao">-->
+    <!--        <constructor-arg name="name" value="kekee"/>-->
+    <!--        <constructor-arg name="age" value="18"/>-->
+    <!--    </bean>-->
+    <!--配置工厂对象-->
+    <!--    <bean id="beanFactory2" class="com.kekee.factory.MyBeanFactory2"/>-->
+    <!--    <bean id="userDao2" factory-bean="beanFactory2" factory-method="userDao"/>-->
+    <!--    <bean id="userDao3" class="com.kekee.factory.MyBeanFactory3"/>-->
+
+    <alias name="userDao" alias="xxx"/>
+    <alias name="userDao" alias="dao"/>
+
+</beans>

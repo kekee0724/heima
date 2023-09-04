@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--配置目标类-->
+    <bean id="userService" class="com.kekee.service.impl.UserServiceImpl"/>
+
+    <!--配置的通知类-->
+    <bean id="myAdvice" class="com.kekee.advice.MyAdvice3"/>
+
+    <!--    <bean class="com.kekee.processor.MockAopBeanPostProcessor"/>-->
+    <aop:config>
+        <!--配置切点表达式，目的是要指定哪些方法被增强-->
+        <aop:pointcut id="myPointCut" expression="execution(void com.kekee.service..*.*(..))"/>
+
+        <aop:advisor advice-ref="myAdvice" pointcut-ref="myPointCut"/>
+
+        <!--配置织入，目的是要执行哪些切点与那些通知进行结合-->
+        <!--        <aop:aspect ref="myAdvice">-->
+        <!--            &lt;!&ndash;前置通知&ndash;&gt;-->
+        <!--            <aop:before method="beforeAdvice" pointcut-ref="myPointCut"/>-->
+        <!--            &lt;!&ndash;后置通知&ndash;&gt;-->
+        <!--&lt;!&ndash;            <aop:after-returning method="afterReturningAdvice" pointcut-ref="myPointCut"/>&ndash;&gt;-->
+        <!--            &lt;!&ndash;环绕通知&ndash;&gt;-->
+        <!--&lt;!&ndash;            <aop:around method="aroundAdvice" pointcut-ref="myPointCut"/>&ndash;&gt;-->
+        <!--            &lt;!&ndash;异常抛出通知&ndash;&gt;-->
+        <!--            <aop:after-throwing method="afterThrowingAdvice" pointcut-ref="myPointCut" throwing="e"/>-->
+        <!--            &lt;!&ndash;最终通知&ndash;&gt;-->
+        <!--            <aop:after method="afterAdvice" pointcut-ref="myPointCut"/>-->
+
+
+        <!--            &lt;!&ndash;            切点表达式举几个例子方便理解&ndash;&gt;-->
+        <!--            &lt;!&ndash;            //表示访问修饰符为public、无返回值、在com.kekee.service.impl包下的UserServiceImpl类的无参方法show&ndash;&gt;-->
+        <!--            &lt;!&ndash;            <aop:before method="beforeAdvice" pointcut="execution (public void com.kekee.service.impl.UserServiceImpl.show1(..))"/>&ndash;&gt;-->
+        <!--            &lt;!&ndash;            //表述com.kekee.service.impl包下的UserServiceImpl类的任意方法&ndash;&gt;-->
+        <!--            &lt;!&ndash;            <aop:before method="beforeAdvice" pointcut="execution (* com.kekee.service.impl.UserServiceImpl.*(..))"/>&ndash;&gt;-->
+        <!--            &lt;!&ndash;            //表示com.kekee.service包下的任意类的任意方法&ndash;&gt;-->
+        <!--            &lt;!&ndash;            <aop:before method="beforeAdvice" pointcut="execution (* com.kekee.service.*.*(..))"/>&ndash;&gt;-->
+        <!--            &lt;!&ndash;            //表示com.kekee.service包及其子包下的任意类的任意方法&ndash;&gt;-->
+        <!--            &lt;!&ndash;            <aop:before method="beforeAdvice" pointcut="execution (* com.kekee.service..*.*(..))"/>&ndash;&gt;-->
+        <!--            &lt;!&ndash;            //表示任意包中的任意类的任意方法&ndash;&gt;-->
+        <!--            &lt;!&ndash;            <aop:before method="beforeAdvice" pointcut="execution (* *..*.*(..))"/>&ndash;&gt;-->
+        <!--        </aop:aspect>-->
+    </aop:config>
+</beans>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--    <bean class="com.kekee.processor.MyBeanFactoryPostProcessor"/>-->
+    <!--    <bean class="com.kekee.processor.MyBeanDefinitionRegistryPostProcessor"/>-->
+    <!--    <bean class="com.kekee.processor.MyComponentBeanFactoryPostProcessor"/>-->
+    <bean class="com.kekee.processor.MyBeanPostProcessor"/>
+    <bean class="com.kekee.processor.TimeLogBeanPostProcessor"/>
+
+</beans>

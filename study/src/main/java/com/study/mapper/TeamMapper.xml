@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.mapper.TeamMapper">
+    <cache eviction="FIFO"
+           flushInterval="60000"
+           size="512"
+           readOnly="true"/>
+    <select id="getTeamList" resultType="Team">
+        select *
+        from t_team
+    </select>
+    <!--    <select id="getTeam" resultType="Team">-->
+    <select id="getTeam" resultMap="TeamUser">
+        select t.id, t.team_name, t.team_org, u.id uid, u.username, u.password
+        from t_team t,
+             t_user u
+        where t.id = u.team
+          and t.id = #{id}
+    </select>
+    <resultMap id="TeamUser" type="Team">
+        <id property="id" column="id"/>
+        <id property="team_name" column="team_name"/>
+        <id property="team_org" column="team_org"/>
+        <collection property="users" ofType="User">
+            <result property="id" column="uid"/>
+            <result property="username" column="username"/>
+            <result property="password" column="password"/>
+        </collection>
+    </resultMap>
+    <select id="getTeamPage" resultType="Team">
+        select *
+        from t_team
+        <bind name="page" value="(page-1)*size"></bind>
+        limit #{page},#{size};
+    </select>
+    <insert id="addTeam" parameterType="Team">
+        insert into t_team (id, team_name, team_org)
+        values (#{id}, #{team_name}, #{team_org});
+    </insert>
+    <delete id="delTeam">
+        delete
+        from t_team
+        where id = #{id};
+    </delete>
+    <update id="updateTeam" parameterType="Team">
+        update t_team
+        set team_name = #{team_name},
+            team_org  = #{team_org}
+        where id = #{id};
+    </update>
+</mapper>
