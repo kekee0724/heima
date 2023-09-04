@@ -15,29 +15,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>reco-ide</module>
-        <module>reco-flow</module>
-        <module>reco-office-ide</module>
-        <module>reco-oauth2</module>
-        <module>reco-pay</module>
-        <module>reco-push</module>
-        <module>reco-dataservice-ide</module>
-        <module>reco-iparkplus-ide</module>
-        <module>reco-iparkbase</module>
-        <module>reco-oa-ide</module>
-        <module>reco-space</module>
-        <module>reco-z6-ide</module>
-        <module>reco-g6-ide</module>
-        <module>reco-policy-ide</module>
-        <module>reco-ieb-ide</module>
-        <module>reco-biparkall</module>
-        <module>r2023-upms-model</module>
-        <module>r2023-upms-domain</module>
-        <module>r2023-upms-web</module>
-        <module>reco-boot</module>
-        <module>reco-bean</module>
-        <module>reco-boot-quickstart</module>
-        <module>reco-generator</module>
         <module>hm-dianping</module>
         <module>concurrent/case_java7</module>
         <module>concurrent/case_java8</module>
