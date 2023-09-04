@@ -15,6 +15,13 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>study</module>
+        <module>spring-ioc</module>
+        <module>spring-ioc-new</module>
+        <module>spring-aop</module>
+        <module>spring_trans_test</module>
+        <module>spring-webmvc</module>
+        <module>spring-webmvc-new</module>
         <module>hm-dianping</module>
         <module>concurrent/case_java7</module>
         <module>concurrent/case_java8</module>
