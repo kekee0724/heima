@@ -9,8 +9,8 @@
         <version>2.4.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>cn.bipark.reco</groupId>
-    <artifactId>reco-parent</artifactId>
+    <groupId>com.kekee</groupId>
+    <artifactId>parent</artifactId>
     <version>10.1.22</version>
     <packaging>pom</packaging>
 
@@ -83,7 +83,7 @@
                 <version>1.18.22</version>
             </dependency>
             <dependency>
-                <groupId>cn.bipark.reco</groupId>
+                <groupId>com.kekee</groupId>
                 <artifactId>reco-ide</artifactId>
                 <version>10.1.22</version>
             </dependency>
